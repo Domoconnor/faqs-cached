@@ -1,0 +1,102 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=64"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=64" dir="ltr">https://www.feralhosting.com/faq/view?question=64</a>. It is a snapshot of the page as it appeared on Nov 13, 2016 02:42:19 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=64" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D64&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D64&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Set Up and Configure pyWHATauto on Your Feral Box - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>Set Up and Configure pyWHATauto on Your Feral Box</h1>
+    <div class="wallOfText">
+        
+            <br>
+<strong>1:</strong> Download <a href="https://github.com/jimrollenhagen/pywhatauto/archive/master.zip">pyWHATauto</a>.<br>
+<br>
+<strong>2:</strong> Extract it to any folder you want, let&#x27;s say &#x2F;pyWHATauto&#x2F;. It can be anywhere, really.<br>
+<br>
+<strong>3:</strong> Edit the setup.conf file. There are examples there commented out by &#x27;;&#x27;. Fill out your information and save it.<br>
+<br>
+<strong>4:</strong> Edit the credentials.conf file. Currently only whatcd and broadcasthenet are fully functional. Each option should be self-explanatory, but just in case:<br>
+<br>
+4.1: enabled: is this site enabled?<br>
+4.2: nickowner: what is the ident of the owner of the bot? For example, on what.cd mine is set to: 34038@johnnyfive.member.what.cd<br>
+4.3: chanfilter: What channels on this network should I join on connect? Multiple entries can be separated by commas.<br>
+4.4: username: The username on the website you use.<br>
+4.5: password: The password on the website you use.<br>
+4.6: botNick: The nickname of the bot which will join the IRC network.<br>
+4.7: irckey: The IRCkey set at the website.<br>
+4.8: nickServPass: The registration password for the botNick to authorize to nickserv.<br>
+4.9: watch: This is the only tricky one. This watch folder will only by used for manual downloads on this network.<br>
+<br>
+<strong>5:</strong> Edit the filters.conf file. Woohooo here&#x27;s where the fun begins!<br>
+<br>
+5.1: At the top of each example filter is a list of the allowed filter options for that site.<br>
+5.2: Each tag&#x2F;filter option can have multiple values, separated either by commas or newline+tab.<br>
+5.3: &quot;site&quot; and &quot;filtertype&quot; are important! Look at the examples to see how they are used.<br>
+5.4: &quot;enabled&quot; will toggle whether the filter is on or off.<br>
+<br>
+<strong>6:</strong> From there, depending on your OS, you can start the program. On linux navigate to the folder that holds WHATauto.py, and type &quot;python WHATauto.py&quot;. That&#x27;s it! If you want to screen it, just do &quot;screen python WHATauto.py&quot;.<br>
+<br>
+<strong>7:</strong> It should be running, and connected to some networks.<br>
+<br>
+<strong>8:</strong> Connect to said networks with your favorite IRC program. Make sure you are ident&#x27;d with Nickserv and the network bot.<br>
+<br>
+<strong>9:</strong> Type %help in the #whatbot channel. See if it responds. If all went well, you should receive a reply in the channel.<br>
+<br>
+<br>
+---<br>
+an alternative guide is available on what.cd: <a href="https://ssl.what.cd/forums.php?action=viewthread&#x26;threadid=88314">https:&#x2F;&#x2F;ssl.what.cd&#x2F;forums</a><br>
+<br>
+
+        
+    </div>
+    <p class="credit">This page was last edited on 2015-06-22 09:30:16. You may <a href="edit?question=64">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
