@@ -1,0 +1,97 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=24"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=24" dir="ltr">https://www.feralhosting.com/faq/view?question=24</a>. It is a snapshot of the page as it appeared on Nov 1, 2016 11:33:17 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=24" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D24&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D24&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Mount Your Server as a Local Filesystem - Linux - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>Mount Your Server as a Local Filesystem - Linux</h1>
+    <div class="wallOfText">
+        
+            This guide is intended for GNU Linux users who wish to mount their server onto their local file system so they can quickly access files stored there. This guide is prepared for Ubuntu but users of other Linux distributions should use their own package managers to install to necessary software. <br>
+<br>
+<h3>Installation &amp; Configuration</h3><br>
+<strong>1:</strong> Install the <em>sshfs</em> package (use <em>apt-get</em> instead of <em>aptitude</em> on some versions)<br>
+<br>
+<pre><code>sudo aptitude install sshfs</code></pre><br>
+<strong>2:</strong> Add yourself to group <em>fuse</em><br>
+<br>
+<pre><code>sudo adduser $USER fuse</code></pre><br>
+If using <em>$USER</em> creates problems, substitute it for your local username.<br>
+<br>
+<strong>3:</strong> Log out and log back in again for the changes to take effect<br>
+<br>
+<strong>4:</strong> Create a local directory where you want to mount your data<br>
+<br>
+<pre><code>mkdir ~&#x2F;feral</code></pre><br>
+<strong>5:</strong> Perform initial test to see if you can mount manually<br>
+<br>
+<pre><code>sshfs -o idmap=user <strong>username</strong>@<strong>serve</strong>r.feralhosting.com:&#x2F;media&#x2F;<strong>DiskID&#x2F;home&#x2F;username</strong> ~&#x2F;feral</code></pre><br>
+<strong>6:</strong> If all went well and you don&#x27;t want to automount (and automate) this, then you are finished. Simply run the previous command whenever you want accesss! Run this command to safely unmount: <br>
+<br>
+<pre><code>fusermount -u ~&#x2F;feral</code></pre><br>
+<h3>Advanced</h3><br>
+<strong>7:</strong> Those who wish to automount their server need to edit &#x2F;etc&#x2F;fstab:<br>
+<br>
+<pre><code>sudo nano &#x2F;etc&#x2F;fstab</code></pre><br>
+<strong>8:</strong> Add the following line to the end of fstab:<br>
+<br>
+<pre><code>user@server.feralhosting.com:&#x2F;path&#x2F;to&#x2F;your&#x2F;disk&#x2F; &#x2F;mnt&#x2F;file&#x2F; fuse auto_cache,reconnect,allow_other,idmap=user</code></pre><br>
+<strong>9:</strong> Run <em>sudo mount -a</em> and your server should mount OK. On the next reboot it should all work automatically.<br>
+<br>
+<br>
+<br>
+
+        
+    </div>
+    <p class="credit">This page was last edited on 2016-10-14 13:53:20. You may <a href="edit?question=24">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

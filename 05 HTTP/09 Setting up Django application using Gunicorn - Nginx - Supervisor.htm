@@ -1,0 +1,144 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=247"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=247" dir="ltr">https://www.feralhosting.com/faq/view?question=247</a>. It is a snapshot of the page as it appeared on Nov 12, 2016 20:30:56 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=247" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D247&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D247&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Setting up Django application using Gunicorn - Nginx - Supervisor - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>Setting up Django application using Gunicorn - Nginx - Supervisor</h1>
+    <div class="wallOfText">
+        
+            There have been several very good detailed tutorials written on the how to set up a Django application(s) using Gunicorn as the application server, Nginx as the proxy server&#x2F;static content web server, and Supervisor to monitor and manage it. <br>
+<br>
+So I&#x27;ll not spend much time rehashing what those tutorials tell you, but sharing the details of what it took to get it up and running here:<br>
+<br>
+Most of the tutorials refer to PostgreSQL setups, but <a href="https://www.feralhosting.com/faq/view?question=9">MySQL</a> is already available with your account and supported by Django, and there is sqlite which is included in the base python installation. I chose the later as my database already existed in sqlite.<br>
+<br>
+The biggest challenge was on the nginx side. All the tutorials reference to setting up a &quot;server&quot;&#x2F;virtual host and making changes within <em>&#x2F;etc&#x2F;nginx&#x2F;sites-available</em> and <em>&#x2F;etc&#x2F;nginx&#x2F;sites-enabled</em>. Those are not accessible for change within a slot. Therefore leverageing <em>location {}</em> was the only option that would work (3+ days of trial and error to find it).<br>
+<br>
+I created two files in:<br>
+<br>
+<pre><code>~&#x2F;.nginx&#x2F;conf.d&#x2F;000-default-server.d</code></pre><br>
+<h3>static-app.conf</h3><br>
+Create a file called:<br>
+<br>
+<pre><code>~&#x2F;.nginx&#x2F;conf.d&#x2F;000-default-server.d&#x2F;static-app.conf</code></pre><br>
+And populate it with this. Edit in your info:<br>
+<br>
+<pre><code>location &#x2F;static&#x2F; {
+alias &#x2F;media&#x2F;DiskID&#x2F;home&#x2F;username&#x2F;www&#x2F;$host&#x2F;public_html&#x2F;webapps&#x2F;static&#x2F;;
+}</code></pre><br>
+<h3>&lt;app-name&gt;-app.conf</h3><br>
+Create a file called, where <em>YourApp</em> is the name of the application:<br>
+<br>
+<pre><code>~&#x2F;.nginx&#x2F;conf.d&#x2F;000-default-server.d&#x2F;YourApp-app.conf</code></pre><br>
+And populate it with this. Edit in your info:<br>
+<br>
+<pre><code>location &#x2F;&lt;app-name&gt;&#x2F; {
+
+# an HTTP header important enough to have its own Wikipedia entry:
+#&nbsp;  <a href="http://en.wikipedia.org/wiki/X-Forwarded-For">http:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;X-Forwarded-For</a>
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+# pass the Host: header from the client right along so redirects
+# can be set properly within the Rack application
+proxy_set_header Host $http_host;
+
+# we don&#x27;t want nginx trying to do something clever with
+# redirects, we set the Host: header above already.
+proxy_redirect off;
+
+proxy_pass <a href="http://">http:&#x2F;&#x2F;</a>&lt;internal-ip-address:port&gt;;
+
+}</code></pre><br>
+That second file was the key; When you go to your browser and type in:<br>
+<br>
+<pre><code><a href="http://username.server.feralhosting.com/app-name/">http:&#x2F;&#x2F;username.server.feralhosting.com&#x2F;app-name&#x2F;</a></code></pre><br>
+It will proxy&#x2F;redirect the request (including all the parts of the URI from <em>&#x2F;&lt;app-name&gt;&#x2F;....</em> to end). <br>
+<br>
+The address of <em><a href="http://Internal-IP-address:port">http:&#x2F;&#x2F;Internal-IP-address:port</a></em> is the same bind&#x2F;address that was set-up within Gunicorn.<br>
+<br>
+To get internal IP address, I was able to use the following command:<br>
+<br>
+<pre><code>&#x2F;sbin&#x2F;ifconfig |grep -B1 &quot;inet addr&quot; |awk &#x27;{ if ( $1 == &quot;inet&quot; ) { print $2 } else if ( $2 == &quot;Link&quot; ) { printf &quot;%s:&quot; ,$1 } }&#x27; |awk -F: &#x27;{ print $1 &quot;: &quot; $3 }&#x27;</code></pre><br>
+The address next to users: is the IP address you want to leverage. <strong>(I&#x27;m assuming it does stay static)</strong><br>
+<br>
+The purpose of that is to avoid using a public facing IP address like the one associated with &lt;slot&gt;.feralhosting.com which could cause you to expose the application directly to the outside world which can be a security problem for you.<br>
+<br>
+The last piece of the puzzles that is different from all other set-ups is within the Django area. If you leverage the admin capability of Django, you will need to update the default set-up for <em>urls.py</em> related to admin.<br>
+<br>
+<pre><code># Uncomment the next line to enable the admin:
+# url(r&#x27;^admin&#x2F;&#x27;, include(admin.site.urls)),
+url(r&#x27;^&lt;app-name&gt;&#x2F;admin&#x2F;&#x27;, include(admin.site.urls)),</code></pre><br>
+This way Django will be expecting a URL starting with <em>app-name&#x2F;admin&#x2F;</em> instead of <em>admin&#x2F;</em>. This will help you with regards to supporting multiple applications and using the different Admin pages for each application separately. <br>
+<br>
+Everything else basically came from the tutorial provided below, and there are others on the web that provide slight variations of it. But the above items should help with getting things set-up on your slot. <br>
+<br>
+My next step is to work on creating a script that will handle automating alot of these steps to make sure it gets done correctly each time without forgetting a step. I&#x27;ll share a link to that once completed in case others would like to leverage it.<br>
+<br>
+Good luck!!!<br>
+<br>
+<h3>References</h3><br>
+<a href="https://www.djangoproject.com/">Django</a><br>
+<a href="http://gunicorn.org/">Gunicorn</a><br>
+<a href="http://nginx.org/">Nginx</a><br>
+<a href="http://supervisord.org/">Supervisor</a><br>
+<a href="http://www.virtualenv.org/en/latest/">Virtualenv</a><br>
+<a href="http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/">Setup Tutorial Reference</a><br>
+<br>
+<br>
+<br>
+
+        
+    </div>
+    <p class="credit">This page was last edited on 2013-09-08 13:35:23. You may <a href="edit?question=247">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

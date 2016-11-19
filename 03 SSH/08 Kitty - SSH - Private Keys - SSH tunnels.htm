@@ -1,0 +1,204 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=240"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=240" dir="ltr">https://www.feralhosting.com/faq/view?question=240</a>. It is a snapshot of the page as it appeared on Nov 14, 2016 01:07:04 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=240" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D240&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D240&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Kitty - SSH - Private Keys - SSH tunnels - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>Kitty - SSH - Private Keys - SSH tunnels</h1>
+    <div class="wallOfText">
+        
+            <br>
+Your FTP &#x2F; SFTP &#x2F; SSH login information can be found on the Slot Details page for the relevant slot. Use this link in your Account Manager to access the relevant slot:<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/0%20Generic/slot_detail_link.png"><br>
+<br>
+You login information for the relevant slot will be shown here:<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/0%20Generic/slot_detail_ssh.png"><br>
+<br>
+<h2>Kitty SSH Client</h2><br>
+<a href="http://www.9bis.net/kitty/?page=Download">Kitty SSH client</a><br>
+<br>
+<a href="http://www.fosshub.com/KiTTY.html">Main Kitty Download Page</a><br>
+<br>
+ <strong>Important note:</strong> You can rename <code>kitty.exe</code> to <code>putty.exe</code> and use it wherever an application has putty integration. For example, Bitkinex and WinSCP.<br>
+<br>
+<h2>Information</h2><br>
+Completing the whole guide is not Required. To use Kitty to connect to your slot you only need to complete the steps in Part 1 of this FAQ. This will use Kitty to connect in the traditional way you would when using putty.<br>
+<br>
+<h2>Part 1: Basic Connection</h2><br>
+We need to force the <code>UTF-8</code> language option to avoid some visual issues when connecting. If you are having Unicode character issues it is because you forgot to set this here before connecting.<br>
+<br>
+<strong>1:</strong> Navigate to the <code>Window</code> panel.<br>
+<br>
+<strong>2:</strong> Select the <code>Translation</code> panel.<br>
+<br>
+<strong>3:</strong> Select <code>UTF-8</code> in the drop down menu.<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SSH/Kitty%20-%20SSH%20-%20Private%20Keys%20-%20SSH%20tunnels/1.png"><br>
+<br>
+ <strong>Important note:</strong> This optional but recommended step will save your Feral username and SSH password for the session to connect without requiring you to enter this information.<br>
+<br>
+<strong>1:</strong> Navigate to the <code>Connection</code> panel.<br>
+<br>
+<strong>2:</strong> Select the <code>Data</code> panel.<br>
+<br>
+<strong>3:</strong> Enter your Feral username in the <code>Auto-login username</code> field.<br>
+<br>
+<strong>4:</strong> Enter your Feral FTP &#x2F; SFTP &#x2F; SSH Access password found in the slots details pages for the relevant slot into the <code>Auto-login password</code> field.<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SSH/Kitty%20-%20SSH%20-%20Private%20Keys%20-%20SSH%20tunnels/2.png"><br>
+<br>
+<strong>1:</strong> Navigate to the <code>Session</code> panel if not already there.<br>
+<br>
+<strong>2:</strong> Enter the hostname of the Feral server that hosts your slot.<br>
+<br>
+<strong>3:</strong> The SSH port is always <code>22</code>.<br>
+<br>
+<strong>4:</strong> Make sure the <code>SSH</code> radio option is selected (it should be selected by default).<br>
+<br>
+<strong>5:</strong> Give this session a name for when we save so you can identify and load it after.<br>
+<br>
+<strong>6:</strong> Save this session with all the information you have provided and settings you have configured.<br>
+<br>
+ <strong>Important note:</strong> Make sure you have saved your session once you have provided all the core details.<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SSH/Kitty%20-%20SSH%20-%20Private%20Keys%20-%20SSH%20tunnels/3.png"><br>
+<br>
+Once you have saved your&nbsp; new session then you would normally follow this process when opening KiTTY to work with saved sessions:<br>
+<br>
+<strong>1:</strong> Navigate to the <code>Session</code> panel if not already there (this panel is the default when opening KiTTY)<br>
+<br>
+<strong>2:</strong> Select the session you want to load<br>
+<br>
+<strong>3:</strong> Click on <code>Load</code> to load this session and all configurations associated with it.<br>
+<br>
+<strong>4:</strong> Click <code>Open</code> to start the connection.<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SSH/Kitty%20-%20SSH%20-%20Private%20Keys%20-%20SSH%20tunnels/4.png"><br>
+<br>
+ <strong>Important note:</strong> Check you are connecting to the right host before accepting. If you connecting to the correct host and are asked to save the HOSTs Key say <code>yes</code> and check and box that says to remember&#x2F;always do this.<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SSH/Kitty%20-%20SSH%20-%20Private%20Keys%20-%20SSH%20tunnels/5.png"><br>
+<br>
+ <strong>Important note:</strong> Don&#x27;t forget to save this session after making any new changes.<br>
+<br>
+<h2>Part 2: Using a&nbsp; putty format ppk keyfile.</h2><br>
+This guide assumes you have created a private key according to this <strong>Guide :</strong> <a href="https://www.feralhosting.com/faq/view?question=13">Setting up Public Key Authentication for Password-less Login</a><br>
+<br>
+<strong>1:</strong> Navigate to the <code>Session</code> panel if not already there (this panel is the default when opening KiTTY)<br>
+<strong>2:</strong> Select the session you want to load<br>
+<strong>3:</strong> Click on <code>Load</code> to load this session and all configurations associated with it.<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SSH/Kitty%20-%20SSH%20-%20Private%20Keys%20-%20SSH%20tunnels/6.png"><br>
+<br>
+<strong>1:</strong> Navigate to the <code>Connection</code> panel.<br>
+<strong>2:</strong> Navigate down to the `SSH Panel.<br>
+<strong>3:</strong> Select the <code>Auth</code> panel.<br>
+<strong>4:</strong> Click on <code>Browse</code> to look for and load a <code>ppk</code> format keyfile.<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SSH/Kitty%20-%20SSH%20-%20Private%20Keys%20-%20SSH%20tunnels/7.png"><br>
+<br>
+Once loaded into kitty the path to the keyfile will be shown.<br>
+<br>
+<strong>1:</strong> Once loaded into kitty the path to the keyfile will be shown in the field.<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SSH/Kitty%20-%20SSH%20-%20Private%20Keys%20-%20SSH%20tunnels/8.png"><br>
+<br>
+ <strong>Important note:</strong> Don&#x27;t forget to save this session after making any new changes.<br>
+<br>
+<strong>1:</strong> Navigate back to the <code>Session</code> panel.<br>
+<strong>2:</strong> Select the session you want to save and merge the new configuration settings with.<br>
+<strong>3:</strong> Click on <code>Save</code> to have these new settings saved to the selected session.<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SSH/Kitty%20-%20SSH%20-%20Private%20Keys%20-%20SSH%20tunnels/9.png"><br>
+<br>
+<h2>Part 3: Creating an SSH Tunnel to use as a local SOCKS proxy.</h2><br>
+ <strong>Important note:</strong> You can add and create more than one tunnel per session if needed.<br>
+<br>
+<strong>1:</strong> Navigate to the <code>Session</code> panel if not already there (this panel is the default when opening KiTTY)<br>
+<strong>2:</strong> Select the session you want to load<br>
+<strong>3:</strong> Click on <code>Load</code> to load this session and all configurations associated with it.<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SSH/Kitty%20-%20SSH%20-%20Private%20Keys%20-%20SSH%20tunnels/10.png"><br>
+<br>
+<strong>1:</strong> Navigate to the <code>Connection</code> panel.<br>
+<strong>2:</strong> Navigate down to the `SSH Panel.<br>
+<strong>3:</strong> Select the <code>Tunnels</code> panel.<br>
+<strong>4:</strong> Configure the new dynamic forwarded port that will act as a local SOCKS proxy (see next image for details)<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SSH/Kitty%20-%20SSH%20-%20Private%20Keys%20-%20SSH%20tunnels/11.png"><br>
+<br>
+<strong>1:</strong> Select the <code>Auto</code> radio (this should already be selected by default)<br>
+<strong>2:</strong> Select the <code>Dynamic</code> radio<br>
+<strong>3:</strong> Select and enter a port between the range of <code>10001</code> to <code>49999</code><br>
+<strong>4:</strong> Click <code>Add</code> to add this SSH tunnel.<br>
+<strong>5:</strong> Once added you will see the tunnel listed in the <code>Forwarded ports</code> window.<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SSH/Kitty%20-%20SSH%20-%20Private%20Keys%20-%20SSH%20tunnels/12.png"><br>
+<br>
+ <strong>Important note:</strong> Don&#x27;t forget to save this session after making any new changes.<br>
+<br>
+<strong>1:</strong> Navigate back to the <code>Session</code> panel.<br>
+<strong>2:</strong> Select the session you want to save and merge the new configuration settings with.<br>
+<strong>3:</strong> Click on <code>Save</code> to have these new settings saved to the selected session.<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SSH/Kitty%20-%20SSH%20-%20Private%20Keys%20-%20SSH%20tunnels/13.png"><br>
+<br>
+<br>
+<br>
+
+        
+    </div>
+    <p class="credit">This page was last edited on 2015-03-25 10:14:54. You may <a href="edit?question=240">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

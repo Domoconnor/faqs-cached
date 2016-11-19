@@ -1,0 +1,148 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=232"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=232" dir="ltr">https://www.feralhosting.com/faq/view?question=232</a>. It is a snapshot of the page as it appeared on Nov 15, 2016 10:01:27 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=232" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D232&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D232&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Irssi - Basic Setup - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>Irssi - Basic Setup</h1>
+    <div class="wallOfText">
+        
+            <br>
+Here is the basic set-up to get connected to the Feral IRC channel using Irssi from your Feral slot. It will get you connected using SSL to the Feral IRC channel using irssi.<br>
+<br>
+Doe these commands in <a href="https://www.feralhosting.com/faq/view?question=12">SSH</a>:<br>
+<br>
+<strong>1:</strong> Create a required folder and get a custom theme<br>
+<br>
+<pre><code>mkdir -p ~&#x2F;.irssi&#x2F;scripts&#x2F;autorun
+wget -qO ~&#x2F;.irssi&#x2F;xchat.theme <a href="http://irssi.org/themefiles/xchat.theme">http:&#x2F;&#x2F;irssi.org&#x2F;themefiles&#x2F;xchat.theme</a></code></pre><br>
+<strong>2:</strong> Get a nick colour script:<br>
+<br>
+<pre><code>wget -qO ~&#x2F;.irssi&#x2F;scripts&#x2F;autorun&#x2F;xchatnickcolor.pl <a href="http://dave.waxman.org/irssi/xchatnickcolor.pl">http:&#x2F;&#x2F;dave.waxman.org&#x2F;irssi&#x2F;xchatnickcolor.pl</a></code></pre><br>
+<strong>3:</strong> Create a screen and open irssi in it using this command:<br>
+<br>
+<pre><code>screen -S irssi irssi</code></pre><br>
+Once it has loaded copy or type these commands to configure your username. Where <code>username</code> is your Feral username (it can be something else):<br>
+<br>
+<pre><code>&#x2F;set NICK username
+&#x2F;set user_name username
+&#x2F;set real_name username
+&#x2F;HILIGHT username</code></pre><br>
+<strong>4:</strong> Optionally, make some more configuration changes:<br>
+<br>
+<pre><code>&#x2F;set autolog ON
+&#x2F;set recode_autodetect_utf8 ON
+&#x2F;set recode_fallback utf-8
+&#x2F;set recode_out_default_charset utf-8
+&#x2F;set term_charset utf-8
+&#x2F;set theme xchat</code></pre><br>
+<strong>5:</strong> Configure your server and channel settings:<br>
+<br>
+<strong>Important note:</strong> Remove <code>-auto</code> to stop it automatically connecting on start-up:<br>
+<br>
+<pre><code>&#x2F;network ADD What-Network
+&#x2F;server ADD -ssl -auto -network What-Network irc.what-network.net 6697
+&#x2F;channel ADD -auto #feral What-Network</code></pre><br>
+<strong>Important Note</strong> If you have already registered your Nick on IRC you can do this now instead of in step 7:<br>
+<br>
+<pre><code>&#x2F;network ADD -autosendcmd &quot;&#x2F;msg nickserv IDENTIFY YourPassGoesHere;wait 2000&quot; What-Network
+&#x2F;server ADD -ssl -auto -network What-Network irc.what-network.net 6697
+&#x2F;channel ADD -auto #feral What-Network</code></pre><br>
+You can add more commands if required. They are separated by a <code>;</code> like this:<br>
+<br>
+For example, this version works for me to ghost my username on connect to make sure I always connect as the same user.<br>
+<br>
+<pre><code>&#x2F;network ADD -autosendcmd &quot;&#x2F;msg NickServ GHOST username YourPassGoesHere;wait 2000;&#x2F;nick username;wait 2000;&#x2F;msg NickServ IDENTIFY YourPassGoesHere;wait 2000&quot; What-Network</code></pre><br>
+<strong>6:</strong> Save your configuration changes<br>
+<br>
+<pre><code>&#x2F;save</code></pre><br>
+<strong>7:</strong> Now while you are still inside this screen you can use this command to connect<br>
+<br>
+<pre><code>&#x2F;connect What-Network</code></pre><br>
+If you Nick is not already registered you can do so now like this:<br>
+<br>
+<pre><code>&#x2F;msg NickServ REGISTER YourPassGoesHere YouEmail@GoesHere</code></pre><br>
+Where <code>YourPassGoesHere</code> is the password you wish to use and <code>YouEmail@GoesHere</code> is an email address you use to register with.<br>
+<br>
+Then update your configuration file to automatically do this when you connect next time using this command:<br>
+<br>
+<pre><code>&#x2F;network ADD -autosendcmd &quot;&#x2F;msg nickserv IDENTIFY YourPassGoesHere;wait 2000&quot; What-Network</code></pre><br>
+Then save the updated configuration:<br>
+<br>
+<pre><code>&#x2F;save</code></pre><br>
+<strong>8:</strong> Changing windows<br>
+<br>
+You can change windows using these commands:<br>
+<br>
+<pre><code>&#x2F;window 1
+&#x2F;window 2
+&#x2F;window 3
+&#x2F;window 4</code></pre><br>
+Or use the <code>ESC</code> key and a number, for example: Press and hold <code>ESC</code> then press <code>3</code>. If you are already on this window it will just print the number.<br>
+<br>
+Detach from the screen using this keyboard sequence:<br>
+<br>
+The press and hold <code>CTRL</code> and <code>a</code> then press <code>d</code> to detach from the screen. This leaves it running in the background.<br>
+<br>
+Use this command to re attach to the screen:<br>
+<br>
+<pre><code>screen -r irssi</code></pre><br>
+And that is basically it. You are automatically connecting to the What-Network, Feral channel with a username<br>
+<br>
+<br>
+<br>
+
+        
+    </div>
+    <p class="credit">This page was last edited on 2014-03-27 10:34:17. You may <a href="edit?question=232">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

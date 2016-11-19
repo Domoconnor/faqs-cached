@@ -1,0 +1,143 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=231"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=231" dir="ltr">https://www.feralhosting.com/faq/view?question=231</a>. It is a snapshot of the page as it appeared on Nov 15, 2016 03:29:43 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=231" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D231&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D231&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Updating Apache to nginx - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>Updating Apache to nginx</h1>
+    <div class="wallOfText">
+        
+            A web server is software that sends web pages to your browser over the HTTP protocol. Apache is the name of the current web server we&#x27;re using, however we&#x27;re looking to move to <code>nginx</code> as it&#x27;s easier to configure, uses less memory and is faster. Updating to <code>nginx</code> is essential if you want to run a lot of concurrent HTTP connections.<br>
+<br>
+To switch to <code>nginx</code> create the folder called <br>
+<br>
+<pre><code>.nginx</code></pre><br>
+in the base of your home folder with an <a href="https://www.feralhosting.com/faq/view?question=187">FTP &#x2F; SFTP client</a>. <br>
+<br>
+Or <a href="https://www.feralhosting.com/faq/view?question=12">using SSH</a> run this command:<br>
+<br>
+<pre><code>mkdir -p ~&#x2F;.nginx</code></pre><br>
+After <strong>waiting 5 minutes</strong> Apache will shut down and <code>nginx</code> will have been auto-configured to be very similar to Apache. It will attempt to:<br>
+<br>
+- Configure PHP<br>
+- Serve domains from <code>~&#x2F;www&#x2F;*&#x2F;public_html</code><br>
+- Password protect rutorrent<br>
+- Set up an rtorrent SCGI rpc mount point at <code>&#x2F;$username&#x2F;RPC</code> (necessary for Transdroid)<br>
+- Deny access to areas of rutorrent which do not need web access<br>
+- Deny access to all files beginning with <code>.ht</code><br>
+- Deny access to any folder with a <code>.htaccess</code> file at the time of auto-configuration<br>
+<br>
+<strong>Important note:</strong> The SCGI rpc password will be the same as the rutorrent password, for your Feral username, at the time the update was initiated. See this FAQ for changing these passwords if you have forgotten them - <a href="https://www.feralhosting.com/faq/view?question=22">Password protect your WWW folder</a><br>
+<br>
+Additional domain top-level configuration and domains can be updated by dropping (or editing) files in the directory: <br>
+<br>
+<pre><code>~&#x2F;.nginx&#x2F;conf.d</code></pre><br>
+You should not need to do this if you just want to <a href="https://www.feralhosting.com/faq/view?question=52">add a domain</a>. <br>
+<br>
+Configuration for the default domain can be updated by adding (or editing) files in the folder <br>
+<br>
+<pre><code>~&#x2F;.nginx&#x2F;conf.d&#x2F;000-default-server.d</code></pre><br>
+<strong>Important note:</strong> You will need to restart <code>nginx</code> to apply configuration changes you make, once nginx has been loaded, for them to take effect.<br>
+<br>
+If you run any custom configuration in Apache (found in the <code>.htaccess</code> files or the <code>~&#x2F;.apache2&#x2F;conf.d&#x2F;</code> directory) then you should carefully review and apply this configuration to <code>nginx</code>. <br>
+<br>
+<strong>Important note:</strong> As a precaution any folder containing a <code>.htaccess</code> file will be denied access at the time of auto-configuration.<br>
+<br>
+To review the configuration will need to consult the <a href="http://httpd.apache.org/docs/2.2/index.html">Apache 2.2 documentation</a> and corresponding <a href="http://wiki.nginx.org/Main">nginx command</a><br>
+<br>
+There exist tools to assist with the conversion if you <a href="https://www.google.com/&#x23;q=nginx&#x2B;htaccess&#x2B;converter">Google &quot;nginx htaccess converter&quot;</a>. The paths with a <code>.htaccess</code> are denied by the default server configuration in the files <br>
+<br>
+<pre><code>*-deny-htaccess.conf</code></pre><br>
+Which can be removed once you&#x27;ve reviewed the set up.<br>
+<br>
+<strong>Reload your nginx.conf</strong><br>
+<br>
+To reload the nginx conf file use this command for changes to take effect use this command:<br>
+<br>
+<pre><code>&#x2F;usr&#x2F;sbin&#x2F;nginx -s reload -c ~&#x2F;.nginx&#x2F;nginx.conf</code></pre><br>
+You will see this:<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Updating%20Apache%20to%20nginx/nginx.png"><br>
+<br>
+This is normal, your changes have been applied. You may need clear your browser cache for some changes to take effect.<br>
+<br>
+<strong>Kill the nginx process</strong><br>
+<br>
+<code>nginx</code> can be killed and then automatically restarted by running the <a href="https://www.feralhosting.com/faq/view?question=12">SSH command</a> <br>
+<br>
+<pre><code>killall -9 -u $(whoami) nginx php5-fpm</code></pre><br>
+and then waiting up to 5 minutes for it to be restarted.<br>
+<br>
+If nothing prevents nginx starting, like a bad .conf file, then running this command should show you the running processes.<br>
+<br>
+<pre><code>ps x | grep nginx | grep -v grep</code></pre><br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Updating%20Apache%20to%20nginx/started.png"><br>
+<br>
+<br>
+<strong>Notes:</strong><br>
+<br>
+In regards to this particular action:<br>
+<br>
+- Deny access to any folder with a <code>.htaccess</code> file at the time of auto-configuration<br>
+<br>
+What will happen is that a numbered <code>deny.conf</code> will be created in the the <code>~&#x2F;.nginx&#x2F;conf.d&#x2F;000-default-server.d</code> directory. This can break certain apps and will happen during the upgrade from Apache to nginx. An example of this is <code>_h5ai</code> if it was present during before upgrading to nginx.<br>
+<br>
+If you&#x27;ve setup couchpotato or sickrage&#x2F;sickbeard using our scripts, and found that the sites no longer work after updating Apache to nginx, please re-run the setup scripts for the programs.&nbsp; They allow you to choose to reinstall the nginx proxy bypass (Option #2).&nbsp; This will restore the sites without having to manually convert the .conf files from Apache to nginx.<br>
+<br>
+apache2nginx<br>
+<br>
+
+        
+    </div>
+    <p class="credit">This page was last edited on 2016-11-09 14:24:32. You may <a href="edit?question=231">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

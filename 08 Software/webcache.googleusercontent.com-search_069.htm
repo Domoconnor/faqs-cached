@@ -1,0 +1,114 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=155"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=155" dir="ltr">https://www.feralhosting.com/faq/view?question=155</a>. It is a snapshot of the page as it appeared on Nov 15, 2016 04:08:03 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=155" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D155&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D155&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Icecast - streaming media server - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>Icecast - streaming media server</h1>
+    <div class="wallOfText">
+        
+            In SSH do the commands described in this FAQ. If you do not know how to SSH into your slot use this FAQ: <a href="https://www.feralhosting.com/faq/view?question=12">SSH basics - Putty</a><br>
+<br>
+Your FTP &#x2F; SFTP &#x2F; SSH login information can be found on the Slot Details page for the relevant slot. Use this link in your Account Manager to access the relevant slot:<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/0%20Generic/slot_detail_link.png"><br>
+<br>
+You login information for the relevant slot will be shown here:<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/0%20Generic/slot_detail_ssh.png"><br>
+<br>
+<h2>Installing Icecast On To Your Feralhosting Slice!</h2><br>
+<strong>0:</strong> Make sure you have enough time to do this. It can take from a couple minutes, to a couple hours! Hopefully this guide will keep it to a couple minutes! <br>
+<br>
+<strong>1:</strong> SSH in to your Feral slice<br>
+<br>
+<strong>2:</strong> Run this:<br>
+<br>
+<pre><code>svn co -q <a href="http://svn.xiph.org/icecast/trunk/icecast">http:&#x2F;&#x2F;svn.xiph.org&#x2F;icecast&#x2F;trunk&#x2F;icecast</a> ~&#x2F;icecast</code></pre><br>
+This will download icecast SVN, you do not have to use the SVN.<br>
+<br>
+<strong>3:</strong> Once this has finished cd to your icecast folder:<br>
+<br>
+<pre><code>mkdir -p ~&#x2F;private&#x2F;icecast&#x2F;var&#x2F;log&#x2F;icecast &amp;&amp; cd ~&#x2F;icecast</code></pre><br>
+<strong>4:</strong> Now, run autogen: <br>
+<br>
+<pre><code>.&#x2F;autogen.sh --prefix=&quot;$HOME&#x2F;private&#x2F;icecast&quot;</code></pre><br>
+Where the prefix is the location you want to install icecast to. If you are following along with this guide for the first time or you are unsure of what to put at the prefix, simply use the provided command.<br>
+<br>
+<strong>Note:</strong> If you see a compilation error at the stage, please open a support ticket and request the following packages to be installed: libxslt1-dev libogg-dev libvorbis-dev<br>
+<br>
+<strong>5:</strong> Now we need to make, simply type: <br>
+<br>
+<pre><code>make &amp;&amp; make install</code></pre><br>
+<strong>6:</strong> After &quot;make&quot; finishes, we need to run <br>
+<br>
+We should receive no errors. However, if you do receive a permissions error check your prefix that we set in step 5!<br>
+<br>
+<strong>7:</strong> After &quot;make install&quot; finishes you need to edit your &quot;icecast.xml&quot; to your liking, I will not cover editing that here, you can look elsewhere online on editing your &quot;icecast.xml&quot;. You can edit this via the ssh tunnel you have open or just open it directly in an FTP client then saving it back to the server. This file can be found in the folder:<br>
+<br>
+<pre><code>~&#x2F;private&#x2F;icecast&#x2F;etc&#x2F;icecast.xml</code></pre><br>
+<strong>8:</strong> Now we need to run icecast on our server. First navigate to the bin folder: <br>
+<br>
+Now use this command to run the server: <br>
+<br>
+<pre><code>~&#x2F;private&#x2F;icecast&#x2F;bin&#x2F;.&#x2F;icecast -c ~&#x2F;private&#x2F;icecast&#x2F;etc&#x2F;icecast.xml</code></pre><br>
+This will start our icecast server using the configuration file you set up in step five.<br>
+<br>
+<strong>9:</strong> Your server is now up and running the final thing you need to do is set up your source client.<br>
+A few clients you can use are Nicecast(MAC), ices2, ices0.<br>
+<br>
+<strong>10:</strong> A final thing, make sure you set up your mount point in your source client! If you do not do this, no one will be able to listen to your stream!
+        
+    </div>
+    <p class="credit">This page was last edited on 2014-09-16 15:02:04. You may <a href="edit?question=155">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

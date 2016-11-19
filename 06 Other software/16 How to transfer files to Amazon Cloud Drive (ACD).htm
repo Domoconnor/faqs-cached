@@ -1,0 +1,126 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=322"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=322" dir="ltr">https://www.feralhosting.com/faq/view?question=322</a>. It is a snapshot of the page as it appeared on Nov 12, 2016 16:03:11 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=322" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D322&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D322&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>How to transfer files to Amazon Cloud Drive (ACD) - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>How to transfer files to Amazon Cloud Drive (ACD)</h1>
+    <div class="wallOfText">
+        
+            To upload and download files to you Amazon Cloud Drive solution utilizing <a href="https://acd-cli.readthedocs.org/en/latest/">adc_cli</a> a lightweight command-line client for Amazon Cloud Drive (ACD), allowing you to access ACD storage from the command line.<br>
+<a href="https://www.feralhosting.com/faq/view?question=12">Login to slot via ssh</a><br>
+Below are detailed instruction and command that need to be run. Installation requires custom install of python with linked sql.<br>
+Run this commands one by one and be patient it takes time<br>
+<br>
+<pre><code>wget <a href="http://www.sqlite.org/2016/sqlite-autoconf-3130000.tar.gz">http:&#x2F;&#x2F;www.sqlite.org&#x2F;2016&#x2F;sqlite-autoconf-3130000.tar.gz</a>
+tar xf sqlite-autoconf-3130000.tar.gz &amp;&amp; rm sqlite-autoconf-3130000.tar.gz
+cd sqlite-autoconf-3130000&#x2F;
+LDFLAGS=&quot;-L${HOME}&#x2F;opt&#x2F;lib&quot; CFLAGS=&quot;-L${HOME}&#x2F;opt&#x2F;include&quot; .&#x2F;configure --prefix=$HOME&#x2F;opt
+make &amp;&amp; make install &amp;&amp; cd
+mkdir -p ~&#x2F;python&#x2F;python3
+wget -qO ~&#x2F;python.tar.xz&nbsp; <a href="https://www.python.org/ftp/python/3.5.0/Python-3.5.0.tar.xz">https:&#x2F;&#x2F;www.python.org&#x2F;ftp&#x2F;python&#x2F;3.5.0&#x2F;Python-3.5.0.tar.xz</a>
+tar xf ~&#x2F;python.tar.xz &amp;&amp; cd ~&#x2F;Python-3.5.0
+LD_RUN_PATH=$HOME&#x2F;opt&#x2F;lib .&#x2F;configure --prefix=$HOME&#x2F;python&#x2F;python3 LDFLAGS=&quot;-L$HOME&#x2F;opt&#x2F;lib&quot; CPPFLAGS=&quot;-I$HOME&#x2F;opt&#x2F;include&quot;
+LD_RUN_PATH=$HOME&#x2F;opt&#x2F;lib make
+make install
+cd &amp;&amp; rm -rf ~&#x2F;python{-3.5.0,.tar.xz}
+~&#x2F;python&#x2F;python3&#x2F;bin&#x2F;pip3 install --user --upgrade git+<a href="https://github.com/yadayada/acd_cli.git">https:&#x2F;&#x2F;github.com&#x2F;yadayada&#x2F;acd_cli.git</a></code></pre><br>
+<br>
+One time authentication setup and database sync.<br>
+<br>
+Before using acd_cli, you need to go through one-time authentication, where you authorize acd_cli to access your Amazon Cloud Drive account via OAuth.<br>
+<br>
+<pre><code>.local&#x2F;bin&#x2F;acd_cli init</code></pre><br>
+<br>
+You have two options: <br>
+Login to <a href="https://tensile-runway-92512.appspot.com">https:&#x2F;&#x2F;tensile-runway-92512.appspot.com</a> with Amazon credentials, follow prompts, at the end you will be presented with download &quot;oauth_data&quot; file. Save on your local hard drive and the ftp upload to your_user_directory .cache&#x2F;acd_cli<br>
+Second option:<br>
+Follow prompts, fill out your amazon information, checkmark &quot;always&quot;. Navigate using arrow key. After all information filled go up to login and press enter or right arrow you will be presented with your token, csave the plaintext response data into a file called &quot;oauth_data&quot; in the directory &quot;.cache&#x2F;acd_cli&#x2F;&quot;<br>
+Now end amazon session by pressing &quot;q&quot;.<br>
+<br>
+Before running any command with acd_cli, you need to sync its local cache with your Amazon Cloud Drive account. Run<br>
+<pre><code>.local&#x2F;bin&#x2F;acd_cli sync</code></pre><br>
+<br>
+This completes setup.<br>
+<br>
+Using it. To see your Amazon Cloud Drive directory and usage:<br>
+<pre><code>.local&#x2F;bin&#x2F;acd_cli usage</code></pre><br>
+Result will be like that<br>
+<em>Documents:&nbsp; &nbsp;  966,&nbsp; &nbsp; 1.2 GiB<br>
+Other:&nbsp; &nbsp; &nbsp;  10030,&nbsp; &nbsp; 6.8 TiB<br>
+Photos:&nbsp; &nbsp; &nbsp;  5651,&nbsp;  30.4 GiB<br>
+Videos:&nbsp; &nbsp; &nbsp;  3502,&nbsp; &nbsp; 1.2 TiB<br>
+Total:&nbsp; &nbsp; &nbsp;  20149,&nbsp; &nbsp; 8.1 TiB</em><br>
+<br>
+To list files in a folder:<br>
+<pre><code>.local&#x2F;bin&#x2F;acd_cli ls &#x2F;Videos</code></pre><br>
+<br>
+To upload folder to ACD<br>
+<pre><code>.local&#x2F;bin&#x2F;acd_cli upload -x 2 -r 4 --deduplicate ~&#x2F;folder_to_upload&#x2F; &#x2F;amazon_folder_destination&#x2F;</code></pre><br>
+-x MAX_CONNECTIONS, -r MAX_RETRIES<br>
+--deduplicate exclude duplicate files from upload, useful in case of errors. Only files with different checksum will be replaced.<br>
+<br>
+For downloading files to feralhosting use &quot;download&quot; command instead of &quot;upload&quot; and reverse directories for file location.<br>
+<br>
+<h2>Troubleshooting</h2><br>
+If you see this error when trying to upload or download:<br>
+<br>
+<pre><code>UnicodeEncodeError: &#x27;utf-8&#x27; codec can&#x27;t encode character &#x27;\udcc3&#x27; in position 7: surrogates not allowed
+16-05-03 21:58:36.154 [ERROR] [acd_cli] - Please set your locale or use the &quot;--utf&quot; flag.</code></pre> <br>
+Please try exporting the locale and then running the command as follows:<br>
+<br>
+<pre><code>export LC_ALL=&quot;en_US.UTF-8&quot; &amp;&amp; ~.local&#x2F;bin&#x2F;acd_cli upload</code></pre> 
+        
+    </div>
+    <p class="credit">This page was last edited on 2016-05-23 00:48:24. You may <a href="edit?question=322">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=116"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=116" dir="ltr">https://www.feralhosting.com/faq/view?question=116</a>. It is a snapshot of the page as it appeared on Nov 15, 2016 09:34:30 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=116" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D116&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D116&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Adminer - MySQL administration - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>Adminer - MySQL administration</h1>
+    <div class="wallOfText">
+        
+            <strong>Step 1:</strong> First, go to the <a href="https://www.feralhosting.com/manager/">Account Manager</a> and then use the <a href="https://www.feralhosting.com/manager/">[b]Install Software[&#x2F;b] link in your Manager</a> for that slot:<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/0%20Generic/installmysql.png"><br>
+<br>
+<strong>Step 2:</strong> Install MySQL via the Software Page (selecting the radio button to the left of MySQL):<br>
+<br>
+<strong>Important note:</strong> Take note of your <code>Socket</code> path and your <code>Password</code> once the installation is completed. You do not need them until Step 2. Your username should be <code>root</code>.<br>
+<br>
+<strong>Important note:</strong> MySQL can take up to 15 minutes to install as it is compiled upon request of installation so please be patient:<br>
+<br>
+<strong>Important note:</strong> If you have your own domain you can use this <a href="https://www.feralhosting.com/faq/view?question=52">VHost FAQ</a> to host it here.<br>
+<br>
+This is a relevant (optional) FAQ: <a href="https://www.feralhosting.com/faq/view?question=213">PHP - modify settings</a> for configuration of some PHP settings before you start.<br>
+<br>
+This next stage of the guide needs to be done in an SSH client such as PuTTy.How to <a href="https://www.feralhosting.com/faq/view?question=12">SSH</a> to your slot.<br>
+<br>
+<strong>Step 3:</strong> Now to install Adminer to configure your MySQL using these SSH commands:<br>
+<br>
+<pre><code>mkdir -p ~&#x2F;www&#x2F;$(whoami).$(hostname -f)&#x2F;public_html&#x2F;adminer &amp;&amp; cd $_
+wget -qO index.php <a href="https://www.adminer.org/static/download/4.2.5/adminer-4.2.5-mysql.php">https:&#x2F;&#x2F;www.adminer.org&#x2F;static&#x2F;download&#x2F;4.2.5&#x2F;adminer-4.2.5-mysql.php</a></code></pre><br>
+<strong>Step 4:</strong><br>
+<br>
+<br>
+<strong>1:</strong> Now go to your slot HTTP URL which MUST be in this format, where <code>username</code> if your Feral username and <code>server</code> if the name of the server that the relevant slot is hosted on.<br>
+<br>
+<pre><code><a href="http://username.server.feralhosting.com/adminer">http:&#x2F;&#x2F;username.server.feralhosting.com&#x2F;adminer</a></code></pre><br>
+You can use https if you accept the Feral certificate, which is a mismatch to the URL format but perfectly fine for the purpose.<br>
+<br>
+<pre><code><a href="https://username.server.feralhosting.com/adminer">https:&#x2F;&#x2F;username.server.feralhosting.com&#x2F;adminer</a></code></pre><br>
+<strong>Important note:</strong> The URL format <code>server.feralhosting.com&#x2F;username&#x2F;</code> will not work for Adminer.<br>
+<br>
+<strong>2:</strong> You will need the <code>Socket</code> path, <code>username</code> and <code>password</code> you obtained after installing the MySQL server from the very first step as shown on the Slot Details page for the relevant slot.<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/0%20Generic/mysqlsocket.png"><br>
+<br>
+<strong>Important note:</strong> Put the socket path in the <code>hostname&#x2F;server</code> field prefixed with a <a href="http://en.wikipedia.org/wiki/Colon_%28punctuation%29">colon :</a>, for example:<br>
+<br>
+<pre><code>:&#x2F;media&#x2F;DiskID&#x2F;home&#x2F;username&#x2F;private&#x2F;mysql&#x2F;socket</code></pre><br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Adminer%20-%20MySQL%20administration/0.0.png"><br>
+<br>
+<strong>3:</strong> Put in <code>root</code> for the <code>username</code><br>
+<br>
+<strong>4:</strong> Put in the <code>password</code> obtained from the software install page.<br>
+<br>
+<h3>A very simple overview of creating a New Database and User.</h3><br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Adminer%20-%20MySQL%20administration/0.png"><br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Adminer%20-%20MySQL%20administration/1.png"><br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Adminer%20-%20MySQL%20administration/2.png"><br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Adminer%20-%20MySQL%20administration/3.png"><br>
+<br>
+You can edit the user in the next step as well.<br>
+<br>
+<strong>Important note:</strong> This user is going to be restricted <code>localhost</code> connections only by default. Meaning if you do not use a socket they will not be able to connect to the database.<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Adminer%20-%20MySQL%20administration/4.local.png"><br>
+<br>
+If you require that your user has network access (networking has been enabled) to the Database you would do this instead:<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Adminer%20-%20MySQL%20administration/4.any.png"><br>
+<br>
+Where the Server files has had <code>localhost</code> has been changed to <code>%</code> allowing outside connections to the Database.<br>
+<br>
+<strong>Important note:</strong> These are safe to use privileges that will work with most (pretty much all) web applications.<br>
+<br>
+In this image you can see that we are editing the privileges for the database <code>example</code> that we just created:<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Adminer%20-%20MySQL%20administration/adminerpriv.png"><br>
+<br>
+Once saved, you are ready to use this new Database and user with your web applications.<br>
+<br>
+<br>
+<br>
+
+        
+    </div>
+    <p class="credit">This page was last edited on 2016-11-08 05:44:05. You may <a href="edit?question=116">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

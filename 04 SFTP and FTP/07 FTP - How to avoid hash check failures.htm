@@ -1,0 +1,97 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=78"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=78" dir="ltr">https://www.feralhosting.com/faq/view?question=78</a>. It is a snapshot of the page as it appeared on Oct 18, 2016 22:12:46 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=78" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D78&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D78&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>FTP - How to avoid hash check failures - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>FTP - How to avoid hash check failures</h1>
+    <div class="wallOfText">
+        
+            <h3>Background</h3><br>
+<br>
+FTP and SFTP are good ways to transfer data between a seedbox and a personal computer, but there is a problem: Many FTP&#x2F;SFTP clients use &quot;ASCII mode&quot; to transfer .CUE, .LOG, and .M3U files, and this can modify the files and cause hash check failures. That can cost you precious ratio, if you don&#x27;t notice it in time.<br>
+<br>
+<h3>Why this happens</h3><br>
+<br>
+FTP can transfer files in either of two &quot;modes&quot;:<br>
+<br>
+â€” binary mode transfers an exact copy, byte for byte.<br>
+<br>
+â€” ASCII mode modifies the file. Most often, this means that the way a new line is encoded is changed. On Windows PCs, new lines are demarcated by the bytes \x0D\x0A. On Mac OS X and Linux, new lines are demarcated by \x0A. You might think, &quot;this won&#x27;t be a problem for me, I use the same operating system on my seedbox and my laptop,&quot; but it is still a problem because you may not be using the same operating system as the person who created the torrent. If Alice creates a torrent on a PC which includes \x0D\x0A, and then Bob downloads it onto his Mac seedbox, the download will still be PC-formatted. He can seed it without hash check failures. If Bob then FTPs this file over to his other Mac using &quot;ASCII mode&quot;, it will &quot;translate&quot; that \x0D\x0A into \x0A. If Bob then tries to seed it, there will be a hash check failure because the file has changed.<br>
+<br>
+<h3>How to fix it</h3><br>
+<br>
+Set your FTP client to ALWAYS use binary mode. Note: This is not possible in some FTP clients. In that case, you need to find a different FTP client.<br>
+<br>
+<strong>Specific advice for Mac users:</strong><br>
+<br>
+1. Install Fetch.<br>
+<br>
+2. Go to the Fetch menu and select &quot;Preferences&quot;, then go to the &quot;Download&quot; tab.<br>
+<br>
+3. Set &quot;Default download mode&quot; to &quot;Binary&quot;.<br>
+<br>
+4. Uncheck the box for &quot;Decoding and expansion&quot; â€” leaving this box checked can lead to hash check failures, because it will unzip .ZIP files, etc.<br>
+<br>
+5. Go to the &quot;Upload&quot; tab, and set &quot;Default upload format&quot; to &quot;Binary (raw data)&quot;.<br>
+<br>
+6. Go to the &quot;Obscure&quot; tab, and under &quot;Editing text files&quot; uncheck the box for &quot;Use text mode transfers&quot;. For some stupid reason, this actually matters even if you aren&#x27;t editing text files. This may be a bug.<br>
+<br>
+7. Quit Fetch and then restart.<br>
+<br>
+---<br>
+The guide was originally <a href="https://ssl.what.cd/forums.php?action=viewthread&#x26;threadid=99575">posted on what.cd</a> by user bollweevil.
+        
+    </div>
+    <p class="credit">This page was last edited on 2010-08-01 11:23:53. You may <a href="edit?question=78">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

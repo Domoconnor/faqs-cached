@@ -1,0 +1,101 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=328"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=328" dir="ltr">https://www.feralhosting.com/faq/view?question=328</a>. It is a snapshot of the page as it appeared on Nov 6, 2016 22:38:06 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=328" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D328&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D328&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>ruTorrent Plugin - Screenshots - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>ruTorrent Plugin - Screenshots</h1>
+    <div class="wallOfText">
+        
+            You&#x27;ll need to execute some commands via SSH (secure shell). If you&#x27;ve never used SSH commands the idea of using a terminal window may seem daunting. There is a guide on simply getting connected to your slot through SSH <a href="https://www.feralhosting.com/faq/view?question=12">here</a>. Commands are kept as simple as possible and in most cases will simply need to be copied and pasted into the terminal window (then executed by pressing the <code>Enter</code> key).<br>
+<br>
+<h2>Installing ffmpeg</h2>The plugin uses ffmpeg to generate screenshots and due to the removal of this software from Debian stable you&#x27;ll need to install it to your slot instead. This is easily done by executing the following commands:<br>
+<br>
+<pre><code>mkdir -p ~&#x2F;bin &amp;&amp; bash
+wget -qO ~&#x2F;ffmpeg.tar.gz <a href="http://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz">http:&#x2F;&#x2F;johnvansickle.com&#x2F;ffmpeg&#x2F;releases&#x2F;ffmpeg-release-64bit-static.tar.xz</a>
+tar xf ~&#x2F;ffmpeg.tar.gz 
+rm -rf ffmpeg-*-64bit-static&#x2F;{manpages,presets,readme.txt}
+cp ~&#x2F;ffmpeg-*-64bit-static&#x2F;* ~&#x2F;bin
+chmod 700 ~&#x2F;bin&#x2F;{ffmpeg,ffprobe,ffmpeg-10bit,qt-faststart}
+rm -rf ffmpeg{.tar.gz,-*-64bit-static}
+</code></pre><br>
+<br>
+<h2>Installing Screenshots</h2>If you&#x27;re using 3.6 of ruTorrent (which is the default version installed here at Feral) you won&#x27;t be able to use the general plugin install method described on <a href="https://www.feralhosting.com/faq/view?question=282">this page</a>. Instead, execute these commands:<br>
+<br>
+<pre><code>rm -rf ~&#x2F;www&#x2F;$(whoami).$(hostname -f)&#x2F;public_html&#x2F;rutorrent&#x2F;plugins&#x2F;screenshots
+wget -q <a href="https://bintray.com/artifact/download/novik65/generic/plugins/screenshots-3.6.tar.gz">https:&#x2F;&#x2F;bintray.com&#x2F;artifact&#x2F;download&#x2F;novik65&#x2F;generic&#x2F;plugins&#x2F;screenshots-3.6.tar.gz</a>
+tar xf screenshots-3.6.tar.gz -C ~&#x2F;www&#x2F;$(whoami).$(hostname -f)&#x2F;public_html&#x2F;rutorrent&#x2F;plugins&#x2F;
+rm screenshots-3.6.tar.gz
+</code></pre><br>
+The first command removes any existing instance of screenshots in case you previously installed an incorrect version. Naturally if you are using the 3.7 version of ruTorrent then you can install Screenshots by following the general plugin install method.<br>
+<br>
+<br>
+<h2>Configuring screenshots</h2>To make sure your version of ffmpeg is used we need to amend the screenshot plugin&#x27;s config file. This can be done simply by executing this command:<br>
+<br>
+<pre><code>cd &amp;&amp; sed -i &quot;s|ffmpeg&#x27;] = &#x27;&#x27;|ffmpeg&#x27;] = &#x27;$(pwd)&#x2F;bin&#x2F;ffmpeg&#x27;|g&quot; ~&#x2F;www&#x2F;$(whoami).$(hostname -f)&#x2F;public_html&#x2F;rutorrent&#x2F;plugins&#x2F;screenshots&#x2F;conf.php</code></pre><br>
+As with all plugins, you&#x27;ll need to refresh ruTorrent if it&#x27;s open in a browser to get any changes recognised.<br>
+<br>
+<br>
+<h2>Troubleshooting</h2><em>When I load ruTorrent I get an error &quot;screenshots: Plugin will not work. rTorrent user can&#x27;t access external program (ffmpeg)&quot;</em><br>
+Make sure you&#x27;ve configured screenshots to point to the instance of ffmpeg running on your slot. If in doubt, follow this guide from top to bottom again and refresh ruTorrent.<br>
+<br>
+<em>When I generate screenshots I get no pictures, just a list of numbers</em><br>
+That happens when using the 3.7 version of screenshots with the 3.6 version of ruTorrent. Please install the 3.6 version using the instructions above.<br>
+<br>
+<br>
+<br>
+
+        
+    </div>
+    <p class="credit">This page was last edited on 2016-10-05 16:14:31. You may <a href="edit?question=328">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

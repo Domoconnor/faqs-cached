@@ -1,0 +1,193 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=30"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=30" dir="ltr">https://www.feralhosting.com/faq/view?question=30</a>. It is a snapshot of the page as it appeared on Nov 14, 2016 06:06:34 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=30" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D30&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D30&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>How to change torrent clients with active torrents - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>How to change torrent clients with active torrents</h1>
+    <div class="wallOfText">
+        
+            <h3>Using SSH with PuTTy:</h3><br>
+<strong>1:</strong> Login to your server via <a href="https://www.feralhosting.com/faq/view?question=12">SSH</a><br>
+<br>
+<strong>Important note:</strong> You can pick to either move the files or to copy the files. Both commands are listed below, you do not have to do both.<br>
+<br>
+Should I move or copy? It is up to you and depends what you are aiming to do. <br>
+<br>
+<strong>Move</strong> (mv) if you do not plan to use to the old client any more and are permanently moving to another client.<br>
+<br>
+<strong>Copy</strong> (cp) if you want to still use the client and seed files file you transition into another client. If you have the space to spare.<br>
+<br>
+<strong>Important note:</strong> Ignore errors about non existing files. It just means there was nothing to move or copy<br>
+<br>
+<h3>Rutorrent throttle</h3><br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Completing%20a%20data%20transfer/rutorrent.png"><br>
+<br>
+<h3>rtorrent to transmission</h3><br>
+<strong>1:</strong> To move (mv) or copy (cp) <code>~&#x2F;private&#x2F;rtorrent&#x2F;data&#x2F;</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;private&#x2F;rtorrent&#x2F;data&#x2F;* ~&#x2F;private&#x2F;transmission&#x2F;data&#x2F;
+
+cp -rf ~&#x2F;private&#x2F;rtorrent&#x2F;data&#x2F;* ~&#x2F;private&#x2F;transmission&#x2F;data&#x2F;</code></pre><br>
+<strong>2:</strong> To move (mv) or copy (cp) the <code>~&#x2F;private&#x2F;rtorrent&#x2F;watch</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;private&#x2F;rtorrent&#x2F;watch&#x2F;*.torrent ~&#x2F;private&#x2F;transmission&#x2F;watch&#x2F;
+
+cp -rf ~&#x2F;private&#x2F;rtorrent&#x2F;watch&#x2F;*.torrent ~&#x2F;private&#x2F;transmission&#x2F;watch&#x2F;</code></pre><br>
+<strong>3:</strong> To move (mv) or copy (cp) the <code>~&#x2F;private&#x2F;rtorrent&#x2F;work</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;private&#x2F;rtorrent&#x2F;work&#x2F;*.torrent ~&#x2F;private&#x2F;transmission&#x2F;watch&#x2F;
+
+cp -rf ~&#x2F;private&#x2F;rtorrent&#x2F;work&#x2F;*.torrent ~&#x2F;private&#x2F;transmission&#x2F;watch&#x2F;</code></pre><br>
+<h3>rtorrent to deluge</h3><br>
+<strong>1:</strong> To move (mv) or copy (cp) the <code>~&#x2F;private&#x2F;rtorrent&#x2F;data&#x2F;</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;private&#x2F;rtorrent&#x2F;data&#x2F;* ~&#x2F;private&#x2F;deluge&#x2F;data&#x2F;
+
+cp -rf ~&#x2F;private&#x2F;rtorrent&#x2F;data&#x2F;* ~&#x2F;private&#x2F;deluge&#x2F;data&#x2F;</code></pre><br>
+<strong>2:</strong> To move (mv) or copy (cp) the <code>~&#x2F;private&#x2F;rtorrent&#x2F;watch&#x2F;</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;private&#x2F;rtorrent&#x2F;watch&#x2F;*.torrent ~&#x2F;private&#x2F;deluge&#x2F;watch&#x2F;
+
+cp -rf ~&#x2F;private&#x2F;rtorrent&#x2F;watch&#x2F;*.torrent ~&#x2F;private&#x2F;deluge&#x2F;watch&#x2F;</code></pre><br>
+<strong>3:</strong> To move (mv) or copy (cp) the <code>~&#x2F;private&#x2F;rtorrent&#x2F;work&#x2F;</code> contents: <br>
+<br>
+<pre><code>mv ~&#x2F;private&#x2F;rtorrent&#x2F;work&#x2F;*.torrent ~&#x2F;private&#x2F;deluge&#x2F;watch&#x2F;
+
+cp -rf ~&#x2F;private&#x2F;rtorrent&#x2F;work&#x2F;*.torrent ~&#x2F;private&#x2F;deluge&#x2F;watch&#x2F;</code></pre><br>
+<h3>Transmission throttle</h3><br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Completing%20a%20data%20transfer/transmission 1.png"><br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Completing%20a%20data%20transfer/transmission 2.png"><br>
+<br>
+<h3>transmission to rtorrent</h3><br>
+<strong>1:</strong> To move (mv) or copy (cp) the <code>~&#x2F;private&#x2F;transmission&#x2F;data&#x2F;</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;private&#x2F;transmission&#x2F;data&#x2F;* ~&#x2F;private&#x2F;rtorrent&#x2F;data&#x2F;
+
+cp -rf ~&#x2F;private&#x2F;transmission&#x2F;data&#x2F;* ~&#x2F;private&#x2F;rtorrent&#x2F;data&#x2F;</code></pre><br>
+<strong>2:</strong> To move (mv) or copy (cp) the <code>~&#x2F;.config&#x2F;transmission-daemon&#x2F;torrents</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;.config&#x2F;transmission-daemon&#x2F;torrents&#x2F;*.torrent ~&#x2F;private&#x2F;rtorrent&#x2F;watch&#x2F;
+
+cp -rf ~&#x2F;.config&#x2F;transmission-daemon&#x2F;torrents&#x2F;*.torrent ~&#x2F;private&#x2F;rtorrent&#x2F;watch</code></pre><br>
+<strong>3:</strong> To move (mv) or copy (cp) the <code>~&#x2F;private&#x2F;transmission&#x2F;watch&#x2F;</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;private&#x2F;transmission&#x2F;watch&#x2F;*.torrent ~&#x2F;private&#x2F;rtorrent&#x2F;watch&#x2F;
+
+cp -rf ~&#x2F;private&#x2F;transmission&#x2F;watch&#x2F;*.torrent ~&#x2F;private&#x2F;rtorrent&#x2F;watch&#x2F;</code></pre><br>
+<h3>transmission to deluge</h3><br>
+<strong>1:</strong> To move (mv) or copy (cp) the <code>~&#x2F;private&#x2F;transmission&#x2F;data&#x2F;</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;private&#x2F;transmission&#x2F;data&#x2F;* ~&#x2F;private&#x2F;deluge&#x2F;data&#x2F;
+
+cp -rf ~&#x2F;private&#x2F;transmission&#x2F;data&#x2F;* ~&#x2F;private&#x2F;deluge&#x2F;data&#x2F;</code></pre><br>
+<strong>2:</strong> To move (mv) or copy (cp) the <code>~&#x2F;private&#x2F;transmission&#x2F;watch&#x2F;</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;private&#x2F;transmission&#x2F;watch&#x2F;*.torrent ~&#x2F;private&#x2F;deluge&#x2F;watch&#x2F;
+
+cp -rf ~&#x2F;private&#x2F;transmission&#x2F;watch&#x2F;*.torrent ~&#x2F;private&#x2F;deluge&#x2F;watch&#x2F;</code></pre><br>
+<strong>3:</strong> To move (mv) or copy (cp) the <code>~&#x2F;.config&#x2F;transmission-daemon&#x2F;torrents</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;.config&#x2F;transmission-daemon&#x2F;torrents&#x2F;*.torrent ~&#x2F;private&#x2F;deluge&#x2F;watch&#x2F;
+
+cp -rf ~&#x2F;.config&#x2F;transmission-daemon&#x2F;torrents&#x2F;*.torrent ~&#x2F;private&#x2F;deluge&#x2F;watch&#x2F;</code></pre><br>
+<h3>Deluge throttle</h3><br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Completing%20a%20data%20transfer/deluge.png"><br>
+<br>
+<h3>deluge to rtorrent</h3><br>
+<strong>1:</strong> To move (mv) or copy (cp) the <code>~&#x2F;private&#x2F;deluge&#x2F;data&#x2F;</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;private&#x2F;deluge&#x2F;data&#x2F;* ~&#x2F;private&#x2F;rtorrent&#x2F;data&#x2F;
+
+cp -rf ~&#x2F;private&#x2F;deluge&#x2F;data&#x2F;* ~&#x2F;private&#x2F;rtorrent&#x2F;data&#x2F;</code></pre><br>
+<strong>2:</strong> To move (mv) or copy (cp) the <code>~&#x2F;private&#x2F;deluge&#x2F;watch&#x2F;</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;private&#x2F;deluge&#x2F;watch&#x2F;*.torrent ~&#x2F;private&#x2F;rtorrent&#x2F;watch&#x2F;
+
+cp -rf ~&#x2F;private&#x2F;deluge&#x2F;watch&#x2F;*.torrent ~&#x2F;private&#x2F;rtorrent&#x2F;watch&#x2F;</code></pre><br>
+<strong>3:</strong> To move (mv) or copy (cp) the <code>~&#x2F;.config&#x2F;deluge&#x2F;state&#x2F;*.torrent</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;.config&#x2F;deluge&#x2F;state&#x2F;*.torrent ~&#x2F;private&#x2F;rtorrent&#x2F;watch&#x2F;
+
+cp -rf ~&#x2F;.config&#x2F;deluge&#x2F;state&#x2F;*.torrent ~&#x2F;private&#x2F;rtorrent&#x2F;watch&#x2F;</code></pre><br>
+<h3>deluge to transmission</h3><br>
+<strong>1:</strong> To move (mv) or copy (cp) the <code>~&#x2F;private&#x2F;deluge&#x2F;data&#x2F;</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;private&#x2F;deluge&#x2F;data&#x2F;* ~&#x2F;private&#x2F;transmission&#x2F;data&#x2F;
+
+cp -rf ~&#x2F;private&#x2F;deluge&#x2F;data&#x2F;* ~&#x2F;private&#x2F;transmission&#x2F;data&#x2F;</code></pre><br>
+<strong>2:</strong> To move (mv) or copy (cp) the <code>~&#x2F;private&#x2F;deluge&#x2F;watch&#x2F;</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;private&#x2F;deluge&#x2F;watch&#x2F;*.torrent ~&#x2F;private&#x2F;transmission&#x2F;watch&#x2F;
+
+cp -rf ~&#x2F;private&#x2F;deluge&#x2F;watch&#x2F;*.torrent ~&#x2F;private&#x2F;transmission&#x2F;watch&#x2F;</code></pre><br>
+<strong>3:</strong> To move (mv) or copy (cp) the <code>~&#x2F;.config&#x2F;deluge&#x2F;state&#x2F;*.torrent</code> contents:<br>
+<br>
+<pre><code>mv ~&#x2F;.config&#x2F;deluge&#x2F;state&#x2F;*.torrent ~&#x2F;private&#x2F;transmission&#x2F;watch&#x2F;
+
+cp -rf ~&#x2F;.config&#x2F;deluge&#x2F;state&#x2F;*.torrent ~&#x2F;private&#x2F;transmission&#x2F;watch&#x2F;</code></pre><br>
+<h3>After you have transferred the files</h3><br>
+Once completed, simply check out the Web Gui and make sure everything is up and running.<br>
+<br>
+Then un-throttle your client&#x2F;s.<br>
+<br>
+<h3>Other:</h3><br>
+- If the torrents don&#x27;t automatically begin checking for the material in the new folder, simply right click the torrent and click Verify local data and it should force it to begin.<br>
+<br>
+<br>
+<br>
+
+        
+    </div>
+    <p class="credit">This page was last edited on 2014-09-15 18:09:04. You may <a href="edit?question=30">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

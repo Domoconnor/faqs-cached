@@ -1,0 +1,124 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=169"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=169" dir="ltr">https://www.feralhosting.com/faq/view?question=169</a>. It is a snapshot of the page as it appeared on Nov 12, 2016 20:00:23 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=169" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D169&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D169&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>mktorrent webui - make torrents easily in your browser - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>mktorrent webui - make torrents easily in your browser</h1>
+    <div class="wallOfText">
+        
+            Related FAQs:<br>
+<br>
+<a href="https://www.feralhosting.com/faq/view?question=12">How to SSH into your slot</a><br>
+<a href="https://www.feralhosting.com/faq/view?question=22">Password Protect Your WWW Page(s)</a><br>
+<a href="https://www.feralhosting.com/faq/view?question=20">Putting your WWW folder to use</a><br>
+<a href="https://www.feralhosting.com/faq/view?question=26"> Upload a Downloaded Torrent to Another Tracker</a>.<br>
+<br>
+This FAQ also assumes you know <a href="https://www.feralhosting.com/faq/view?question=12">how to SSH into your slot</a>.&nbsp; This FAQ will be done via SSH, but can realistically all be done on your home computer.<br>
+<br>
+<a href="http://sourceforge.net/projects/mktorrentwebui/">MkTorrent Webui</a><br>
+<br>
+A Web Frontend for MkTorrent. To avoid the need of user accounts and SSH access.<br>
+<br>
+<strong>1:</strong> Download the the <a href="http://sourceforge.net/projects/mktorrentwebui/files/latest/download?source=files">mktorrent webui archive</a><br>
+<br>
+<pre><code>wget -qO ~&#x2F;mk.tar.gz <a href="http://sourceforge.net/projects/mktorrentwebui/files/latest/download?source=files">http:&#x2F;&#x2F;sourceforge.net&#x2F;projects&#x2F;mktorrentwebui&#x2F;files&#x2F;latest&#x2F;download?source=files</a></code></pre><br>
+<strong>2:</strong> Extract the tar file and <code>cd</code> into the folder<br>
+<br>
+<pre><code>tar xfz mk.tar.gz &amp;&amp; cd ~&#x2F;mktorrent&#x2F;</code></pre><br>
+<strong>3:</strong>&nbsp; Find the full path to your client&#x27;s data folder.&nbsp; The easiest way to do this in SSH to to just type &#x27;pwd&#x27; and it will return the full path to whatever folder you&#x27;re currently in:<br>
+<br>
+<pre><code>pwd</code></pre><br>
+For example:<br>
+<br>
+<pre><code>cd ~&#x2F;private&#x2F;rtorrent&#x2F;data</code></pre><br>
+Then do:<br>
+<br>
+<pre><code>pwd</code></pre><br>
+Will return something like:<br>
+<br>
+<pre><code>&#x2F;media&#x2F;sdk1&#x2F;home&#x2F;bobtentpeg&#x2F;private&#x2F;rtorrent&#x2F;data</code></pre><br>
+For those of you using an FTP client, you can find your full path usually by looking at the remote path in your FTP client&#x27;s path bar. In FileZilla its the path listed in the <code>remote site</code> box.&nbsp; If your client doesn&#x27;t have this, you can also find the appropriate DiskID, which in my example is:<br>
+<br>
+<pre><code>sdk1</code></pre><br>
+by going up two directories in the file listing<br>
+<br>
+<strong>4:</strong> Edit the index.php to include the proper root folder path. To edit the file:<br>
+<br>
+<pre><code>nano index.php</code></pre><br>
+Change the the line below to include the proper path:<br>
+<br>
+<pre><code>$root = &quot;&#x2F;home&#x2F;rtorrent&quot;;</code></pre><br>
+The corrected line for me looks like:<br>
+<br>
+<pre><code>$root = &quot;&#x2F;media&#x2F;sdk1&#x2F;home&#x2F;bobtentpeg&#x2F;private&#x2F;rtorrent&#x2F;data&#x2F;&quot;;</code></pre><br>
+Save the file by pressing Control+x and accepting with Y.<br>
+<br>
+<strong>5:</strong> Move the <code>index.php</code> to be visible by HTTP.&nbsp; If you&#x27;re an rutorrent user, the easiest way to to move it to your rutorrent folder with the below command<br>
+<br>
+<pre><code>mv index.php ~&#x2F;www&#x2F;$(whoami).$(hostname -f)&#x2F;public_html&#x2F;rutorrent&#x2F;make.php</code></pre><br>
+.<br>
+5b. If you aren&#x27;t an rutorrent user, be sure to put the php file in a folder that is password protected.&nbsp; You can find directions to pass protect your WWW folders in the introduction for this FAQ.<br>
+<br>
+<strong>6:</strong> Visit it in your browser.&nbsp; If you&#x27;re an rutorrent user, visit your rutorrent URL and login then add &quot;make.php&quot; to the end of the URL.&nbsp; It will look like:<br>
+<br>
+<pre><code><a href="https://server.feralhosting.com/username/rutorrent/make.php">https:&#x2F;&#x2F;server.feralhosting.com&#x2F;username&#x2F;rutorrent&#x2F;make.php</a></code></pre><br>
+<br>
+<br>
+<br>
+<br>
+
+        
+    </div>
+    <p class="credit">This page was last edited on 2015-08-19 12:34:42. You may <a href="edit?question=169">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

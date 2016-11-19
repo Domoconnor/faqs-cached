@@ -1,0 +1,130 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=71"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=71" dir="ltr">https://www.feralhosting.com/faq/view?question=71</a>. It is a snapshot of the page as it appeared on Nov 15, 2016 12:06:03 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=71" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D71&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D71&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Making a Torrent in the Shell - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>Making a Torrent in the Shell</h1>
+    <div class="wallOfText">
+        
+            <br>
+<h2>Make a torrent</h2><br>
+To make a .torrent file using command line, execute this command:<br>
+<br>
+<pre><code>mktorrent -v -p -l 21 -a <a href="http://tracker.url">http:&#x2F;&#x2F;tracker.url</a> -o filename.torrent folder_name</code></pre><br>
+<code>-v</code> is for verbose<br>
+<code>-p</code> is for private, as in not DHT or PeerExchange<br>
+<code>-l</code> is for piece length (or size) for the torrent. It&#x27;s <code>2^n</code> bytes, so <code>-l 21</code> would create a <code>2^21 =2MB</code> piece size (<code>22=4MB</code> and <code>23=8MB</code>). Try to keep total of <code>1000</code> to <code>2000</code> pieces. Increase piece size if needed. <br>
+<code>-a</code> is for tracker, the tracker URL follows (one is required; additional <code>-a</code> commands add backup trackers)<br>
+<code>-o</code> is for output, the torrent file name follows<br>
+<br>
+<strong>Important note:</strong> The command needs to be all in one line, and quotes must be used around the folder name if it contains spaces.<br>
+<br>
+<h2>Example usage</h2><br>
+If I wanted to make a torrent for What.cd from the data in the <code>VA - Summer Trance 2009</code> directory I already have on my server, I would go into the data folder:<br>
+<br>
+<pre><code>cd private&#x2F;tranmission&#x2F;data</code></pre><br>
+ <br>
+Then type the following command:<br>
+<br>
+<pre><code>mktorrent -v -p -l 21 -a <a href="http://tracker.what.cd:34000/xxxXXXxxx/announce">http:&#x2F;&#x2F;tracker.what.cd:34000&#x2F;xxxXXXxxx&#x2F;announce</a> -o VA-Summer_Trance_2009.torrent &quot;VA - Summer Trance 2009&quot;</code></pre><br>
+Please note that you <strong>must</strong> use quotes if the target dir name contains spaces.<br>
+<br>
+<strong>Changing the piece-size</strong><br>
+<br>
+The default piece-size is <code>256kb</code>, which is too small for many files&#x2F;filepacks. (It results in bloated .torrent files and a lot of extra, unnecessary announce traffic.) The command to change the piece size is &#x27;-l XX&#x27; (that&#x27;s a lowercase &quot;L&quot;), according to the following values:<br>
+<br>
+<code>-l 18</code> = <code>256kb</code> piece-size (for filesizes under <code>512MB</code>)<br>
+<code>-l 19</code> = <code>512kb</code> piece-size (for filesizes from <code>512MB</code> to <code>1024MB</code> &#x2F; <code>1GB</code>)<br>
+<code>-l 20</code> = <code>1MB</code> (<code>1024kb</code>) piece-size (for filesizes from <code>1GB</code> to <code>2GB</code>)<br>
+<code>-l 21</code> = <code>2MB</code> (<code>2048kb</code>) piece-size (for filesizes from <code>2GB</code> to <code>4GB</code>)<br>
+<code>-l 22</code> = <code>4MB</code> (<code>4096kb</code>) piece-size (for filesizes from <code>4GB</code> to <code>8GB</code>)<br>
+<code>-l 23</code> = <code>8MB</code> (<code>8192kb</code>) piece-size (for filesizes from <code>8GB</code> to <code>16GB</code>)<br>
+<code>-l 24</code> = <code>16MB</code> (<code>16384kb</code>) piece-size (for filesizes above <code>16GB</code>)<br>
+<br>
+So, using the above example, the command to change the piece-size from the default <code>256kb</code> to <code>4MB</code> would be:<br>
+<br>
+<pre><code>mktorrent -v -p -l 22 -a <a href="http://tracker.what.cd:34000/xxxXXXxxx/announce">http:&#x2F;&#x2F;tracker.what.cd:34000&#x2F;xxxXXXxxx&#x2F;announce</a> -o VA-Summer_Trance_2009.torrent &quot;VA - Summer Trance 2009&quot;</code></pre><br>
+<h2>Automate .torrent creation with a script</h2><br>
+If you do this a lot, it might make sense to use the script below to automate things. To keep things simple, I suggest creating one shell script for each tracker that you are using on a regular basis. To stick with the example above, create a file mk-what-torrent.sh in your home directory, make it executable and open it in the nano editor<br>
+<br>
+<pre><code>echo -n &#x27;&#x27; &gt; ~&#x2F;mk-what-torrent.sh</code></pre><br>
+<pre><code>chmod 700 ~&#x2F;mk-what-torrent.sh</code></pre><br>
+<pre><code>nano ~&#x2F;mk-what-torrent.sh</code></pre><br>
+Paste this code into the file, changing the tracker&#x27;s announce URL to what you actually need (also, remove the <code>-p</code> flag if your tracker is not a private tracker):<br>
+<br>
+<pre><code>#!&#x2F;bin&#x2F;sh
+for i in &quot;$@&quot;; do
+&nbsp; &nbsp;  mktorrent -v -p -a announce.url&#x2F;here -o &quot;$i.torrent&quot; &quot;$i&quot;
+done</code></pre><br>
+Once you have copied the code into the file press and hold <code>CTRL</code> and then press <code>x</code> to save. Press <code>y</code> to confirm.<br>
+<br>
+Then (optionally), edit your <code>~&#x2F;.bash_aliases</code> file<br>
+<br>
+<pre><code>nano ~&#x2F;.bash_aliases</code></pre><br>
+Adding the line<br>
+<br>
+<pre><code>alias mk-what-torrent=&#x27;~&#x2F;mk-what-torrent.sh&#x27;</code></pre><br>
+Then press and hold <code>CTRL</code> and then press <code>x</code> to save. Press <code>y</code> to confirm. Now restart bash using this command:<br>
+<br>
+<pre><code>bash </code></pre><br>
+Now our new bash command&nbsp; <code>mk-what-torrent</code> is available for use via the alias. Now you can just navigate anywhere in your filesystem and create torrents for files and folders using wildcards. For example, <code>mk-what-torrent D*</code> will create torrent files (for what) of all files and folders starting with D in the current directory. <br>
+<br>
+<br>
+<br>
+<br>
+
+        
+    </div>
+    <p class="credit">This page was last edited on 2014-03-27 09:13:23. You may <a href="edit?question=71">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

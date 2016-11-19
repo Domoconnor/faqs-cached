@@ -1,0 +1,146 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=125"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=125" dir="ltr">https://www.feralhosting.com/faq/view?question=125</a>. It is a snapshot of the page as it appeared on Nov 15, 2016 03:00:57 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=125" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D125&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D125&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>SABnzbd - A how to - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>SABnzbd - A how to</h1>
+    <div class="wallOfText">
+        
+            <strong>Please note that this software is not officially supported by Feral Hosting.</strong><br>
+<br>
+<strong>1:</strong> Download SABnzbd from <a href="http://sabnzbd.org/download/">here</a> to your slot. You can do this either by downloading it on your computer and then uploading it using FTP&#x2F;SFTP, or with the following command on your server using SSH:<br>
+<br>
+<pre><code>wget -qO ~&#x2F;SABnzbd.tar.gz <a href="https://github.com/sabnzbd/sabnzbd/releases/download/1.1.0/SABnzbd-1.1.0-src.tar.gz">https:&#x2F;&#x2F;github.com&#x2F;sabnzbd&#x2F;sabnzbd&#x2F;releases&#x2F;download&#x2F;1.1.0&#x2F;SABnzbd-1.1.0-src.tar.gz</a></code></pre><br>
+<strong>2:</strong> Extract the files from the archive.<br>
+<br>
+<pre><code>tar xf ~&#x2F;SABnzbd.tar.gz</code></pre><br>
+<strong>3:</strong> Edit the command needed to run SABnzbd.py and then run it.<br>
+<br>
+This is the command you will need to edit:<br>
+<br>
+<pre><code>screen -fa -dmS sabnzbd python ~&#x2F;SABnzbd-*&#x2F;SABnzbd.py --browser 0 --server $(hostname -f):PORT --https PORT</code></pre><br>
+Please replace each <code>PORT</code> with a different number between <strong>6000</strong> and <strong>50000</strong>. Putting the https port one port above or below is easiest. Press enter to execute the command.<br>
+<br>
+If you pick the same port as someone else for either http or https you&#x27;ll see problems:<br>
+<br>
+1) You might get an error message, or;<br>
+2) When you try to access it through your browser you&#x27;ll be greeted with a password prompt for someone else&#x27;s SABnzbd<br>
+<br>
+In either case you&#x27;ll need to kill the process and start it using a different port.<br>
+<br>
+You will be required to accept the invalid certificate in order to connect to the https port.<br>
+<br>
+For example:<br>
+<br>
+<pre><code>screen -fa -dmS sabnzbd python ~&#x2F;SABnzbd-*&#x2F;SABnzbd.py --browser 0 --server $(hostname -f):12345 --https 12346</code></pre><br>
+<strong>4:</strong> Access SABnzbd through your browser.<br>
+<br>
+<strong>Important note:</strong> Make sure to use the https port in the URL,<br>
+<br>
+<pre><code><a href="https://server.feralhosting.com:PORT/sabnzbd/">https:&#x2F;&#x2F;server.feralhosting.com:PORT&#x2F;sabnzbd&#x2F;</a></code></pre><br>
+For example:<br>
+<br>
+<pre><code><a href="https://peterpan.feralhosting.com:12346/sabnzbd/">https:&#x2F;&#x2F;peterpan.feralhosting.com:12346&#x2F;sabnzbd&#x2F;</a></code></pre><br>
+You won&#x27;t have been given <br>
+<br>
+<strong>5:</strong> Follow the SABnzbd wizard to set up your Usenet account.<br>
+<br>
+<strong> Make sure you set-up a username and password under <code>Config &gt; General</code></strong><br>
+<br>
+<strong>6:</strong>&nbsp; You&#x27;ll need to make 3 folders, you can make the top level &#x27;downloads&#x27; folder wherever you wish:<br>
+<br>
+<pre><code>downloads</code></pre><br>
+Inside this new folder make another 2 folder with these names:<br>
+<br>
+<pre><code>complete</code></pre><br>
+<pre><code>incomplete</code></pre><br>
+(<strong>Note, the two subfolders are required</strong>)<br>
+<br>
+Make sure you&#x27;ve set the proper path to these under <code>Config</code> in the web interface. <strong>You will need to use the full path</strong>. Below you&#x27;ll find a sample path:<br>
+<br>
+<pre><code>&#x2F;media&#x2F;DiskID&#x2F;home&#x2F;username&#x2F;private&#x2F;sab&#x2F;downloads&#x2F;</code></pre><br>
+Connecting in SSH and restarting sabnzbd<br>
+----<br>
+<br>
+<strong>Attach to the screen:</strong><br>
+<br>
+To the screen process using this command:<br>
+<br>
+<pre><code>screen -r sabnzbd</code></pre><br>
+<strong>Kill the screen:</strong><br>
+<br>
+Use this command to kill the screen and the process if needed:<br>
+<br>
+<pre><code>screen -S sabnzbd -X quit</code></pre><br>
+<strong>Restart&nbsp; the screen</strong><br>
+<br>
+You can restart it using just this command once you have used the main command above once as it configures the <code>ini</code> file.<br>
+<br>
+<pre><code>screen -fa -dmS sabnzbd python SABnzbd-*&#x2F;SABnzbd.py</code></pre><br>
+<strong>Added NZB&#x27;s don&#x27;t download</strong><br>
+<br>
+There&#x27;s a bug in SabNZB that will prevent things from downloading if there&#x27;s a <code>www-browser</code> session running in the background. You can check for and quit any <code>www-browser</code> with the below&quot;<br>
+<br>
+<pre><code>ps x | grep www-browser | grep -v grep</code></pre><br>
+If this returns a line containing &quot;www-browser&quot; run the below<br>
+<br>
+<pre><code>killall -9 -u $(whoami) www-browser</code></pre><br>
+<br>
+<br>
+<br>
+
+        
+    </div>
+    <p class="credit">This page was last edited on 2016-11-11 13:54:53. You may <a href="edit?question=125">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

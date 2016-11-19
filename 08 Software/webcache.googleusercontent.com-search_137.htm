@@ -1,0 +1,137 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=250"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=250" dir="ltr">https://www.feralhosting.com/faq/view?question=250</a>. It is a snapshot of the page as it appeared on Nov 13, 2016 17:21:03 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=250" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D250&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D250&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>WeeChat - an IRC Client - Basic Setup - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>WeeChat - an IRC Client - Basic Setup</h1>
+    <div class="wallOfText">
+        
+            <br>
+This FAQ is for downloading and installing <a href="http://www.weechat.org/">WeeChat</a> on your slot.<br>
+<br>
+WeeChat is a fast, light and extensible chat client. It runs on many platforms like Linux, Unix, BSD, GNU Hurd, Mac OS X and Windows (cygwin). <br>
+<br>
+Please run this command in SSH first:<br>
+<br>
+<pre><code>mkdir -p ~&#x2F;bin &amp;&amp; bash</code></pre><br>
+<h2>1: Build WeeChat and install it</h2><br>
+Please use this script.<br>
+<br>
+<strong>Important note:</strong> If you get errors about missing dependencies please see the dependencies section at the end of this FAQ.<br>
+<br>
+<pre><code>wget -qO ~&#x2F;install.weechat <a href="http://git.io/vffAV">http:&#x2F;&#x2F;git.io&#x2F;vffAV</a> &amp;&amp; bash ~&#x2F;install.weechat</code></pre><br>
+<h2>2: Start WeeChat</h2><br>
+We have added the location to the <code>PATH</code> in step 1, so we can use this command:<br>
+<br>
+<pre><code>screen -dmS weechat weechat</code></pre><br>
+Now attach to the screen:<br>
+<br>
+<pre><code>screen -r weechat</code></pre><br>
+The full path to execute WeeChat is:<br>
+<br>
+<pre><code>~&#x2F;bin&#x2F;weechat</code></pre><br>
+<h2>3: Configure WeeChat</h2><br>
+These are some required settings. You enter them in WeeChat after you have started it.<br>
+<br>
+<pre><code>&#x2F;server add What-Network irc.what-network.net&#x2F;6697 -ssl</code></pre><br>
+Replace&nbsp; <code>&quot;username,username_1,username_2&quot;</code> and the two&nbsp; instances of <code>&quot;username&quot;</code> with a username of your&nbsp; choice.<br>
+<br>
+<pre><code>&#x2F;set irc.server.What-Network.nicks &quot;username,username_1,username_2&quot;
+&#x2F;set irc.server.What-Network.username &quot;username&quot;
+&#x2F;set irc.server.What-Network.realname &quot;username&quot;</code></pre><br>
+Some final settings:<br>
+<br>
+<pre><code>&#x2F;set irc.server.What-Network.ssl on
+&#x2F;set irc.server.What-Network.ssl_verify off
+&#x2F;set irc.server.What-Network.ssl_dhkey_size 1024
+&#x2F;save</code></pre><br>
+Add other networks as desired.<br>
+<br>
+<h2>4: Connecting to predefined IRC networks</h2><br>
+Use this command to connect to the Feral Hosting IRC channel,&nbsp; <code>#feral</code> on the <code>What-Network</code>&nbsp; IRC network that we defined in the previous step.<br>
+<br>
+<pre><code>&#x2F;connect What-Network</code></pre><br>
+<h2>5: Join a channel</h2><br>
+<pre><code>&#x2F;j #feral</code></pre><br>
+To detach from the screen, press and hold <code>CRTL</code> and <code>a</code> then press <code>d</code>.<br>
+<br>
+<h2>Further reading</h2><br>
+Here you can get information on further configuration, such as auto join and more.<br>
+<br>
+<a href="http://www.weechat.org/files/doc/weechat_faq.en.html">WeeChat FAQ</a><br>
+<br>
+<a href="http://www.weechat.org/files/doc/stable/weechat_quickstart.en.html">WeeChat Quick Start Guide</a><br>
+<br>
+<a href="http://www.weechat.org/files/doc/stable/weechat_user.en.html">WeeChat Quick Start Guide</a><br>
+<br>
+<br>
+<h2>Dependencies:</h2><br>
+<a href="http://www.weechat.org/files/doc/stable/weechat_user.en.html&#x23;dependencies">http:&#x2F;&#x2F;www.weechat.org&#x2F;files&#x2F;doc&#x2F;stable&#x2F;weechat_user.en.html#dependencies</a><br>
+<br>
+You may need to ask for certain dependencies to be installed. If you experience this through the scripts failing to configure&nbsp; weechat and exiting then please ask for that dependency using this format.<br>
+<br>
+<pre><code>Please can you install some dependencies for Weechat
+
+<a href="http://www.weechat.org/files/doc/stable/weechat_user.en.html&#x23;dependencies">http:&#x2F;&#x2F;www.weechat.org&#x2F;files&#x2F;doc&#x2F;stable&#x2F;weechat_user.en.html#dependencies</a>
+
+apt-get install libgnutls28-dev libncursesw5-dev libgcrypt20-dev
+
+Thank you.</code></pre><br>
+<br>
+<br>
+
+        
+    </div>
+    <p class="credit">This page was last edited on 2015-11-13 20:52:42. You may <a href="edit?question=250">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

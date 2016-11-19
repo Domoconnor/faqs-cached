@@ -1,0 +1,157 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=146"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=146" dir="ltr">https://www.feralhosting.com/faq/view?question=146</a>. It is a snapshot of the page as it appeared on Nov 16, 2016 00:54:17 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=146" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D146&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D146&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Remote Torrent Adder - Adding torrents to your slot from Chrome - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>Remote Torrent Adder - Adding torrents to your slot from Chrome</h1>
+    <div class="wallOfText">
+        
+            <br>
+<strong>1:</strong> Start by installing the extension from here:<br>
+<br>
+<a href="https://chrome.google.com/webstore/detail/oabphaconndgibllomdcjbfdghcmenci">Remote torrent adder</a><br>
+<br>
+<strong>2:</strong> Open the settings for the extension.<br>
+<br>
+<strong>3:</strong> Fill in the data in the form under the WebUI tab accordingly:<br>
+<br>
+<h2>Rutorrent</h2><br>
+<strong>Client:</strong> ruTorrent WebUI from the drop down menu<br>
+<br>
+<strong>Host:</strong> <code>server.feralhosting.com</code> For example: <code>aphrodite.feralhosting.com</code><br>
+<br>
+<strong>Port:</strong> leave blank<br>
+<br>
+<strong>SSL</strong> Checked if you are using SSL<br>
+<br>
+<strong>Username:</strong> Your <code>Feral Username</code><br>
+<br>
+<strong>Password:</strong> Your <code>rutorrent Web Gui Password</code> (as shown on your Slot Details page for rutorrent)<br>
+<br>
+<strong>Important note:</strong> on your username and password: If you have changed your default rutorrent Web Gui config using the <a href="https://www.feralhosting.com/faq/view?question=22">Password Protect Your WWW Page(s)</a> guide you will need to use the <strong>Username</strong> and <strong>Password</strong> you created there.<br>
+<br>
+<strong>Relative Path SSL:</strong> <code>&#x2F;username&#x2F;rutorrent&#x2F;</code><br>
+<br>
+<strong>Label:</strong> [Nothing required]<br>
+<br>
+<strong>Directory:</strong> This is the directory where your torrent <strong>data</strong> will be stored, you will need the full path to this folder.<br>
+To get this you have to SSH into your box, then navigate to your:<br>
+<br>
+Paste the following command into the terminal: <br>
+<br>
+<pre><code>ls -d $HOME&#x2F;private&#x2F;rtorrent&#x2F;data</code></pre><br>
+The output should look something like this:<br>
+<br>
+<pre><code>&#x2F;media&#x2F;DiskID&#x2F;home&#x2F;username&#x2F;private&#x2F;rtorrent&#x2F;data&#x2F;</code></pre><br>
+If you press a torrent link now it should load the .torrent directly into rtorrent<br>
+on your slot.<br>
+<br>
+You will get an error like this:<br>
+<br>
+<img src="https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Other%20software/Remote%20Torrent%20Adder%20-%20Adding%20torrents%20to%20your%20slot%20from%20Chrome/error.png"><br>
+<br>
+But it stills works.<br>
+<br>
+<strong>Important note:</strong><br>
+<br>
+If you update to nginx run this command:<br>
+<br>
+<pre><code>mkdir -p ~&#x2F;www&#x2F;$(whoami).$(hostname -f)&#x2F;public_html&#x2F;rutorrent&#x2F;share&#x2F;torrents</code></pre><br>
+<h2>Still having issues?</h2><br>
+If you are having issues you can try these server settings instead:<br>
+<br>
+<strong>Important note:</strong> If you force redirection to https this URL format <strong>will not work</strong> unless you accept the cert in Chrome first every session. Follow these steps.<br>
+<br>
+1: You will need to visit the <code><a href="https://username.server.feralhosting.com">https:&#x2F;&#x2F;username.server.feralhosting.com</a></code> URL in a Chrome and accept the cert for this session.<br>
+<br>
+2: You will need to check <code>SSL</code> in the remote torrent adder options since https is being forced.<br>
+<br>
+These settings will work if https redirection is not forced, or you have visited the https URL for this session<br>
+<br>
+<strong>Host:</strong> <code>username.server.feralhosting.com</code> For example: <code>peterpan.aphrodite.feralhosting.com</code><br>
+<br>
+<strong>Port:</strong> leave blank<br>
+<br>
+<strong>Relative Path:</strong> <code>&#x2F;rutorrent&#x2F;</code><br>
+<br>
+<strong>SSL:</strong> Checked if https is being forced, otherwise leave unchecked.<br>
+<br>
+<h2>Client: Deluge</h2><br>
+<strong>Host:</strong> server.feralhosting.com<br>
+<br>
+<strong>Port:</strong> leave blank<br>
+<br>
+<strong>Username:</strong> Your Feral username<br>
+<br>
+<strong>Password:</strong> You Deluge Web Gui password as listed on your Slot Details page.<br>
+<br>
+<strong>Relative path:</strong><br>
+<br>
+<pre><code>&#x2F;username&#x2F;deluge</code></pre><br>
+<h2>Notes</h2><br>
+You can also let the option of downloading on your torrent only be available by right-clicking<br>
+the torrent link by deselecting the &quot;clicks on links&quot; in the &quot;link catching&quot; tab.<br>
+(I&#x27;d recommend doing this so you don&#x27;t download all kinds of rubbish onto your slot)<br>
+<br>
+You will also override downloading this on your box by holding down Alt+Ctrl+Shift<br>
+while clicking the link.<br>
+<br>
+<br>
+<br>
+<br>
+
+        
+    </div>
+    <p class="credit">This page was last edited on 2015-08-19 12:31:13. You may <a href="edit?question=146">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="https://www.feralhosting.com/faq/view?question=18"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=18" dir="ltr">https://www.feralhosting.com/faq/view?question=18</a>. It is a snapshot of the page as it appeared on Nov 15, 2016 04:36:12 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=18" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D18&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D18&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Symbolic Links - Shortcuts - FAQ - Feral Hosting</title>
+        <link href="/image/favicon.ico" rel="shortcut icon">
+        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
+        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
+        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+        
+    
+
+    </head>
+    
+        <body class="pricing">
+    
+        <div class="wrapper">
+            <div class="top-border">
+                <div class="container">
+                    <div id="header">
+                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
+                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
+                        <div class="span-3 last"><a href="/manager/">Login</a></div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="last" id="content">
+
+
+    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
+    <h1>Symbolic Links - Shortcuts</h1>
+    <div class="wallOfText">
+        
+            <br>
+<h2>Definition of Symlinks</h2><br>
+What is a Symbolic Link?<br>
+<br>
+If you&#x27;ve ever made a &quot;Shortcut&quot; to a file in Windows, you will easily be able to understand the Linux equivalent (where &quot;aliases&quot; and &quot;shortcuts&quot; came from in the first place!), called a &quot;Symbolic Link&quot;. The easiest definition to understand is directly from the man page, A Symbolic Link is useful for maintaining multiple copies of a file in many places at once without using up storage for the &#x27;copies&#x27;; instead, a link &#x27;points&#x27; to the original copy.<br>
+<br>
+(If you want to read more about it, type <code>man ln</code> in the Terminal.)<br>
+<br>
+Let&#x27;s say you have a folder you need to get to and it is buried deep in your folders. You can simply type:<br>
+<br>
+<pre><code>cd &#x2F;some&#x2F;folder&#x2F;name&#x2F;deep&#x2F;inside&#x2F;other&#x2F;folders</code></pre><br>
+For a real example on feral servers:<br>
+<br>
+<pre><code>cd ~&#x2F;www&#x2F;flatlinebb.mauve.feralhosting.com&#x2F;public_html&#x2F;</code></pre><br>
+It can get annoying to type the long path every time.&nbsp; A symbolic link will solve the problem.<br>
+<br>
+To create the link, simply type the following:<br>
+<br>
+<pre><code>cd ~</code></pre><br>
+(this will put you in your home folder)<br>
+<br>
+<pre><code>ln -s ~&#x2F;www&#x2F;flatlinebb.mauve.feralhosting.com&#x2F;public_html&#x2F; web_folder</code></pre><br>
+That&#x27;s it. <code>ln -s</code> makes a new file called <code>web_folder</code> which points to the deeply buried folder <code>~&#x2F;www&#x2F;flatlinebb.mauve.feralhosting.com&#x2F;public_html&#x2F;</code>.<br>
+I used an underscore, because Linux doesn&#x27;t like spaces, and then you can also complete the name of the folder just by typing we and hitting tab to have the system auto-complete it for you.<br>
+<br>
+To see that this worked, you can simply type:<br>
+<br>
+<pre><code>ls -l</code></pre><br>
+You should see a line with the following text:<br>
+<br>
+<pre><code>web_folder -&gt; ~&#x2F;www&#x2F;flatlinebb.mauve.feralhosting.com&#x2F;public_html&#x2F;</code></pre><br>
+The arrow shows you exactly what you did... A file named <code>web_folder</code> points to <code>~&#x2F;www&#x2F;flatlinebb.mauve.feralhosting.com&#x2F;public_html&#x2F;</code>.<br>
+<br>
+<strong>Important note:</strong> While this method can be used to put a data folder in the web directory, for http sharing with others, please use this faq to setup password protection for that folder:<br>
+<br>
+<a href="https://www.feralhosting.com/faq/view?question=20">Putting your WWW folder to use</a><br>
+<a href="https://www.feralhosting.com/faq/view?question=22">Password protect your WWW folder</a><br>
+<br>
+<strong>Acknowledgment:</strong><br>
+<br>
+Parts of this tutorial have been inspired by <a href="http://www.macosxhints.com/article.php?story=2001110610290643">this site</a>.<br>
+<br>
+<br>
+<br>
+
+        
+    </div>
+    <p class="credit">This page was last edited on 2014-03-27 10:32:29. You may <a href="edit?question=18">edit</a> this page.</p>
+    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="span-14 prepend-1 append-1">
+                    
+                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
+                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
+                    
+                </div>
+                <div class="span-6 last prepend-1 append-1">
+                    <ul>
+                        <li><a href="/about">About / Contact Us</a></li>
+                        <li><a href="https://status.feral.io/">Service status</a></li>
+                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
