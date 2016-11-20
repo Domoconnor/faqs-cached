@@ -1,7 +1,7 @@
-    <h1>How Long until My Slot Is Activated</h1>
-    <div class="wallOfText">
+<h1>How Long until My Slot Is Activated</h1>
         
-            <h2>You Feral hosting account</h2><br>
+<h2>You Feral hosting account</h2><br>
+
 <strong>Important note:</strong> You may want to white list Feral in case of an aggressive spam filter. Add this to your email spam filter white list to ensure you get all emails from Feral:<br>
 <br>
 <pre><code>*.feralhosting.com</code></pre><br>
