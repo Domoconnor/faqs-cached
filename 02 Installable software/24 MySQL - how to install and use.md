@@ -1,37 +1,7 @@
-<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<base href="https://www.feralhosting.com/faq/view?question=9"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=9" dir="ltr">https://www.feralhosting.com/faq/view?question=9</a>. It is a snapshot of the page as it appeared on Nov 8, 2016 07:30:18 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=9" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D9&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D9&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
-<!DOCTYPE html>
-<html lang="en-GB">
-    <head>
-        <title>MySQL - how to install and use - FAQ - Feral Hosting</title>
-        <link href="/image/favicon.ico" rel="shortcut icon">
-        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
-        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
-        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+<h1>MySQL - how to install and use</h1>
+
         
-    
-
-    </head>
-    
-        <body class="pricing">
-    
-        <div class="wrapper">
-            <div class="top-border">
-                <div class="container">
-                    <div id="header">
-                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
-                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
-                        <div class="span-3 last"><a href="/manager/">Login</a></div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="last" id="content">
-
-
-    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
-    <h1>MySQL - how to install and use</h1>
-    <div class="wallOfText">
-        
-            You will need to have Mysql already installed. You can do this from the <a href="https://www.feralhosting.com/manager/">[b]Install Software[&#x2F;b] link in your Manager</a><br>
+You will need to have Mysql already installed. You can do this from the <a href="https://www.feralhosting.com/manager/">[b]Install Software[&#x2F;b] link in your Manager</a><br>
 <br>
 Current Version used in the Feral Installer = <code>5.6.12</code><br>
 <br>
@@ -149,36 +119,3 @@ Notice the <code>&amp;&amp;</code> in-between new commands and the new database 
 <pre><code>~&#x2F;private&#x2F;mysql&#x2F;bin&#x2F;.&#x2F;mysqldump --socket=&#x2F;media&#x2F;DiskID&#x2F;home&#x2F;USERNAME&#x2F;private&#x2F;mysql&#x2F;socket -u root -pPASSWORD YourDB1 &gt; ~&#x2F;mysqlbak&#x2F;YourDB1 &amp;&amp; .&#x2F;mysqldump --socket=&#x2F;media&#x2F;DiskID&#x2F;home&#x2F;USERNAME&#x2F;private&#x2F;mysql&#x2F;socket -u root -pPASSWORD YourDB2 &gt; ~&#x2F;mysqlbak&#x2F;YourDB2</code></pre><br>
 You can add as many databases as you need by appending the new ones to the end of the command.<br>
 <br>
-<br>
-<br>
-
-        
-    </div>
-    <p class="credit">This page was last edited on 2014-09-13 09:57:38. You may <a href="edit?question=9">edit</a> this page.</p>
-    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
-
-
-                    </div>
-                </div>
-            </div>
-            <div class="push"></div>
-        </div>
-        <div id="footer">
-            <div class="container">
-                <div class="span-14 prepend-1 append-1">
-                    
-                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
-                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
-                    
-                </div>
-                <div class="span-6 last prepend-1 append-1">
-                    <ul>
-                        <li><a href="/about">About / Contact Us</a></li>
-                        <li><a href="https://status.feral.io/">Service status</a></li>
-                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>

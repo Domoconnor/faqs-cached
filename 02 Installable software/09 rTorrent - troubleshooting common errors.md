@@ -1,37 +1,7 @@
-<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<base href="https://www.feralhosting.com/faq/view?question=2"><style type="text/css">body { margin-left:0;margin-right:0;margin-top:0; }#google-cache-hdr {background:#f5f5f5 !important;font:13px arial,sans-serif !important;text-align:left !important;color:#202020 !important;border:0 !important;margin:0 !important;border-bottom:1px solid #cecece !important;line-height:16px !important ;padding:16px 28px 24px 28px !important;}#google-cache-hdr * {display:inline !important;font:inherit !important;text-align:inherit !important;color:inherit !important;line-height:inherit !important;background:none !important;border:0 !important;margin:0 !important;padding:0 !important;letter-spacing:0 !important;}#google-cache-hdr a {text-decoration:none !important;color:#1a0dab !important;}#google-cache-hdr a:hover { text-decoration:underline !important; }#google-cache-hdr a:visited { color:#609 !important; }#google-cache-hdr div { display:block !important;margin-top:4px !important; }#google-cache-hdr b {font-weight:bold !important;display:inline-block !important;direction:ltr !important;}</style><div id="google-cache-hdr"  dir=ltr><div>This is Google&#39;s cache of <a href="https://www.feralhosting.com/faq/view?question=2" dir="ltr">https://www.feralhosting.com/faq/view?question=2</a>. It is a snapshot of the page as it appeared on Nov 14, 2016 18:20:53 GMT. </div><div>The <a href="https://www.feralhosting.com/faq/view?question=2" dir="ltr">current page</a> could have changed in the meantime. <a href="http://support.google.com/websearch/bin/answer.py?hl=en&amp;p=cached&amp;answer=1687222">Learn more</a></div><div></div><div><span style="display:inline-block !important;margin-top:8px !important;margin-right:104px !important;white-space:nowrap !important;"><span style="margin-right:28px !important;"><span style="font-weight:bold !important;">Full version</span></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D2&amp;num=1&strip=1&vwsrc=0">Text-only version</a></span><span style="margin-right:28px !important;"><a href="http://webcache.googleusercontent.com/search?q=cache:https://www.feralhosting.com/faq/view%3Fquestion%3D2&amp;num=1&strip=0&vwsrc=1">View source</a></span></span><span style="display:inline-block !important;margin-top:8px !important;color:#717171 !important;">Tip: To quickly find your search term on this page, press <b>Ctrl+F</b> or <b>⌘-F</b> (Mac) and use the find bar.</span></div></div><div style="position:relative;">
-<!DOCTYPE html>
-<html lang="en-GB">
-    <head>
-        <title>rTorrent - troubleshooting common errors - FAQ - Feral Hosting</title>
-        <link href="/image/favicon.ico" rel="shortcut icon">
-        <link href="/css/blueprint/screen.css" media="screen, projector" rel="stylesheet" type="text/css">
-        <link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css">
-        <link href="/css/whysostylish.css?7" media="screen, projector" rel="stylesheet" type="text/css">
+<h1>rTorrent - troubleshooting common errors</h1>
+
         
-    
-
-    </head>
-    
-        <body class="pricing">
-    
-        <div class="wrapper">
-            <div class="top-border">
-                <div class="container">
-                    <div id="header">
-                        <div class="span-15 title"><h2><a href="/">Feral Hosting</a></h2></div>
-                        <div class="span-6"><a href="/pricing">Features &amp; Pricing</a></div>
-                        <div class="span-3 last"><a href="/manager/">Login</a></div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="last" id="content">
-
-
-    <p>&laquo; <a href="/faq/">Return to FAQ</a></p>
-    <h1>rTorrent - troubleshooting common errors</h1>
-    <div class="wallOfText">
-        
-            <br>
+<br>
 rTorrent is a text-mode bittorrent client â€” you can watch how it works through any ssh client, web browser or even a cellphone. Wikipedia and the official website say that the very optimized code makes rTorrent faster than the official client.<br>
 <br>
 If editing the rTorrent configuration file please note you will need to <code>Show Hidden Files</code> or equivalent if using a Windows or Mac based client as files beginning with a period <code>.</code> are hidden by default - the file is called <code>.rtorrent.rc</code>.<br>
@@ -223,36 +193,4 @@ Or delete the file <code>rtorrent.dht_cache</code>, which is in the same directo
 <pre><code>screen rtorrent</code></pre><br>
 It should now launch without an error. Log into your ruTorrent session to verify.<br>
 <br>
-<br>
-<br>
 
-        
-    </div>
-    <p class="credit">This page was last edited on 2014-04-06 16:33:25. You may <a href="edit?question=2">edit</a> this page.</p>
-    <p class="licence"><a href="http://creativecommons.org/licenses/by-sa/2.0/uk/"><img / alt="Creative Commons License" src="/image/creativecommons-by-sa-2.0-uk-88x31.png" style="border-width:0"></a></p>
-
-
-                    </div>
-                </div>
-            </div>
-            <div class="push"></div>
-        </div>
-        <div id="footer">
-            <div class="container">
-                <div class="span-14 prepend-1 append-1">
-                    
-                        <p><strong>Feral Hosting</strong> is a small team of individuals working towards <em>managed solutions</em> for a variety of problems focusing on minimal systems that can do more.</p>
-                        <p class="email">Contact us via a <a href="/manager/tickets/new">support ticket</a> or <a href="mailto:sales@feralhosting.com">sales@feralhosting.com</a>.</p>
-                    
-                </div>
-                <div class="span-6 last prepend-1 append-1">
-                    <ul>
-                        <li><a href="/about">About / Contact Us</a></li>
-                        <li><a href="https://status.feral.io/">Service status</a></li>
-                        <li><a href="https://network.feral.io/reroute">Reroute</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
